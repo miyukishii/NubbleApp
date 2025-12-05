@@ -3,7 +3,7 @@ import { TextField, TextFieldProps } from '../UI/TextField/TextField';
 
 type FormTextFieldProps<T extends FieldValues> =
   UseControllerProps<T> &
-  Omit<TextFieldProps, 'value' | 'onChangeText' | 'errorMessage'>;
+  Omit<TextFieldProps, 'value' | 'onChangeText'>;
 
 export function FormTextfield<T extends FieldValues>({
   control,

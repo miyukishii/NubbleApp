@@ -11,8 +11,9 @@ module.exports = {
     'plugin:import/warnings',
     'plugin:import/typescript',
     'prettier',
+    'plugin:@tanstack/query/recommended'
   ],
-  plugins: ['@typescript-eslint', 'import', 'react'],
+  plugins: ['@typescript-eslint', 'import', 'react', '@tanstack/query'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2021,
@@ -31,14 +32,10 @@ module.exports = {
     },
     'import/resolver': {
       typescript: {
-        project: './tsconfig.json',
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        paths: ['src'],
-      },
+      project: './tsconfig.json',
+      alwaysTryTypes: true,
     },
+  },
   },
   rules: {
     indent: ['warn', 2, {
