@@ -1,0 +1,80 @@
+import React from 'react';
+import { Pressable } from 'react-native';
+
+import { useTheme } from '@shopify/restyle';
+
+import { ArrowLeftIcon } from '../../assets/icons/ArrowLeftIcon';
+import { BellIcon } from '../../assets/icons/BellIcon';
+import { BellOnIcon } from '../../assets/icons/BellOnIcon';
+import { BookMarkFillICon } from '../../assets/icons/BookMarkFillIcon';
+import { BookMarkICon } from '../../assets/icons/BookMarkIcon';
+import { ChatIcon } from '../../assets/icons/ChatIcon';
+import { ChatOnIcon } from '../../assets/icons/ChatOnIcon';
+import { CheckRoundIcon } from '../../assets/icons/CheckRoundIcon';
+import { CommentIcon } from '../../assets/icons/CommentIcon';
+import { ErrorRoundIcon } from '../../assets/icons/ErrorRoundIcon';
+import { EyeOffIcon } from '../../assets/icons/EyeOffIcon';
+import { EyeOnIcon } from '../../assets/icons/EyeOnIcon';
+import { HeartFillIcon } from '../../assets/icons/HeartFillIcon';
+import { HeartIcon } from '../../assets/icons/HeartIcon';
+import { HomeFillIcon } from '../../assets/icons/HomeFillIcon';
+import { HomeIcon } from '../../assets/icons/HomeIcon';
+import { MessageRoundIcon } from '../../assets/icons/MessageRoundIcon';
+import { ProfileFillIcon } from '../../assets/icons/ProfileFillIcon';
+import { ProfileIcon } from '../../assets/icons/ProfileIcon';
+import { SearchIcon } from '../../assets/icons/SearchIcon';
+import { SettingsIcon } from '../../assets/icons/SettingsIcon';
+import { TrashIcon } from '../../assets/icons/TrashIcon';
+import { Theme, ThemeColors } from '../../theme/theme';
+
+export interface IconBaseProps {
+  size?: number;
+  color?: string;
+}
+
+export interface IconProps{
+  name: IconsNames;
+  size?: number;
+  color?: ThemeColors;
+  onPress?: () => void;
+}
+
+export function Icon ({name, size = 20, color = 'backgroundConstrast', onPress}: IconProps) {
+  const {colors} = useTheme<Theme>();
+  const SVGIcon = iconRegistry[name];
+
+  if (onPress) {
+    return (<Pressable hitSlop={10} onPress={onPress}>
+      <SVGIcon size={size} color={colors[color]} />
+    </Pressable>);
+  }
+  return <SVGIcon size={size} color={colors[color]} />;
+}
+
+const iconRegistry = {
+  arrowLeft: ArrowLeftIcon,
+  bell: BellIcon,
+  bellOn: BellOnIcon,
+  bookMark: BookMarkICon,
+  bookMarkFill: BookMarkFillICon,
+  chat: ChatIcon,
+  chatOn: ChatOnIcon,
+  checkRound: CheckRoundIcon,
+  comment: CommentIcon,
+  errorRound: ErrorRoundIcon,
+  eyeOn: EyeOnIcon,
+  eyeOff: EyeOffIcon,
+  heart: HeartIcon,
+  heartFill: HeartFillIcon,
+  home: HomeIcon,
+  homeFill: HomeFillIcon,
+  messageRound: MessageRoundIcon,
+  profileFill: ProfileFillIcon,
+  profile: ProfileIcon,
+  search: SearchIcon,
+  settings: SettingsIcon,
+  trash: TrashIcon,
+};
+
+type IconType = typeof iconRegistry;
+type IconsNames = keyof IconType;
