@@ -1,11 +1,9 @@
-import React from 'react';
-
-import {Svg, Path, Circle} from 'react-native-svg';
+import { Svg, Path, Circle } from 'react-native-svg';
 
 import { IconBaseProps } from '../../components/Icon/Icon';
 import { palette } from '../../theme/theme';
 
-export function BellOnIcon ({size, color}: IconBaseProps) {
+export function BellOnIcon({ size, color }: IconBaseProps) {
   return (
     <Svg width={size} height={size} viewBox="0 0 20 20" fill={color}>
       <Circle cx="16" cy="5" r="3" fill={palette.redError} />

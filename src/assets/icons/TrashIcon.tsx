@@ -1,10 +1,8 @@
-import React from 'react';
-
-import {Svg, Path} from 'react-native-svg';
+import { Svg, Path } from 'react-native-svg';
 
 import { IconBaseProps } from '../../components/Icon/Icon';
 
-export function TrashIcon ({size, color}: IconBaseProps) {
+export function TrashIcon({ size, color }: IconBaseProps) {
   return (
     <Svg width={size} height={size} viewBox="0 0 20 20" fill={color}>
       <Path

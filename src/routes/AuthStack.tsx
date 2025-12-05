@@ -1,6 +1,4 @@
-import React from 'react';
-
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { IconProps } from '../components/Icon/Icon';
 import { LoginScreen } from '../screens/auth/LoginScreen/LoginScreen';
@@ -18,7 +16,7 @@ export type AuthStackParamList = {
 }
 const Stack = createNativeStackNavigator<AuthStackParamList>();
 
-export function AuthStack () {
+export function AuthStack() {
   return (
     <Stack.Navigator
       initialRouteName="LoginScreen"

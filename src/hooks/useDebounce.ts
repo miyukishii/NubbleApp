@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 
 /**
  * @description https://usehooks-ts.com/react-hook/use-debounce

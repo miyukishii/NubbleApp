@@ -67,7 +67,9 @@ module.exports = {
 
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
-
+    '@typescript-eslint/no-namespace': 'off',
+    '@typescript-eslint/no-empty-interface': 'off',
+    'react-native/no-inline-styles': 'off',
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-tag-spacing': ['warn', {

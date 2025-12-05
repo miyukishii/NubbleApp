@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { useNavigation } from '@react-navigation/native';
 
 import { Icon } from '../../../components/Icon/Icon';
@@ -10,7 +8,7 @@ import { ScreenProps } from '../Screen';
 
 type Props = Pick<ScreenProps, 'HeaderComponent'| 'title' | 'showGoBack'>
 
-export function ScreenHeader ({showGoBack, title, HeaderComponent}: Props) {
+export function ScreenHeader({ showGoBack, title, HeaderComponent }: Props) {
   const navigation = useNavigation();
   return (
     <Box mb="s24" {...$StyledHeaderBox}>
@@ -38,7 +36,7 @@ export function ScreenHeader ({showGoBack, title, HeaderComponent}: Props) {
 }
 
 const $StyledHeaderBox: BoxProps = {
-  flexDirection:'row',
-  justifyContent:'space-between',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
   alignItems: 'center',
 };

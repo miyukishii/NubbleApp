@@ -1,6 +1,6 @@
 import { ViewStyle } from 'react-native';
 
-import {createTheme} from '@shopify/restyle';
+import { createTheme } from '@shopify/restyle';
 
 export const palette = {
   greenPrimary: '#074C4E',
@@ -71,7 +71,7 @@ export const $shadowProps: ViewStyle = {
   shadowColor: '#000',
   shadowOpacity: 0.05,
   shadowRadius: 12,
-  shadowOffset: {width: 0, height: -3},
+  shadowOffset: { width: 0, height: -3 },
 };
 
 

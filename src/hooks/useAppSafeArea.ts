@@ -4,7 +4,7 @@ import { useAppTheme } from './useAppTheme';
 
 export function useAppSafeArea() {
   const { top, bottom } = useSafeAreaInsets();
-  const {spacing} = useAppTheme();
+  const { spacing } = useAppTheme();
 
   return {
     top: Math.max(top, spacing.s20),

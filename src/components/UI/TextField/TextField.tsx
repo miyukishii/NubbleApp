@@ -28,7 +28,7 @@ export function TextField({
   boxProps,
   ...rest
 }: TextFieldProps) {
-  const {colors} = useTheme<Theme>();
+  const { colors } = useTheme<Theme>();
   const inputRef = useRef<TextInput>(null);
 
   const focusInput = () => {
@@ -41,7 +41,7 @@ export function TextField({
         {label && (
           <Text preset="paragraphMedium" semibold marginBottom="s8">{label}</Text>
         )}
-        <Box {...$TextFieldContainer({isError: !!errorMessage})}>
+        <Box {...$TextFieldContainer({ isError: !!errorMessage })}>
           {LeftComponent}
           <TextInput
             {...rest}
@@ -49,7 +49,7 @@ export function TextField({
             autoCapitalize="none"
             placeholderTextColor={colors.gray2}
             placeholder={placeholder}
-            style={{fontFamily: $fontFamily.regular, flex: 1}}
+            style={{ fontFamily: $fontFamily.regular, flex: 1 }}
           />
           {RightComponent}
         </Box>

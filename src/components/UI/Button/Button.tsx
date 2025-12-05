@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { ActivityIndicator } from '../ActivityIndicator/ActivityIndicator';
 import { TouchbleOpacityBox, TouchbleOpacityBoxProps } from '../Box/TouchbleOpacityBox';
 import { Text } from '../Text/Text';

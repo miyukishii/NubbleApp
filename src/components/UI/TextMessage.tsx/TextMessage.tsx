@@ -21,8 +21,8 @@ export function TextMessage({
   onPressSend,
   loading,
   value,
-  ...textInputProps}: TextMessageProps): React.JSX.Element {
-  const {colors} = useTheme<Theme>();
+  ...textInputProps }: TextMessageProps): React.JSX.Element {
+  const { colors } = useTheme<Theme>();
   const inputRef = useRef<TextInput>(null);
 
   const focusInput = () => {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Pressable } from 'react-native';
 
 import { useTheme } from '@shopify/restyle';
@@ -39,8 +38,8 @@ export interface IconProps{
   onPress?: () => void;
 }
 
-export function Icon ({name, size = 20, color = 'backgroundConstrast', onPress}: IconProps) {
-  const {colors} = useTheme<Theme>();
+export function Icon({ name, size = 20, color = 'backgroundConstrast', onPress }: IconProps) {
+  const { colors } = useTheme<Theme>();
   const SVGIcon = iconRegistry[name];
 
   if (onPress) {

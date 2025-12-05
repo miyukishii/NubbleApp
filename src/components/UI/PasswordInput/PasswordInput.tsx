@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { Icon } from '../../Icon/Icon';
 import { TextField, TextFieldProps } from '../TextField/TextField';
 
 export type PasswordInputProps = Omit<TextFieldProps, 'icon'>
 
-export function PasswordInput (props: PasswordInputProps) {
+export function PasswordInput(props: PasswordInputProps) {
   const [hidePassword, setHidePassword] = useState(true);
 
   const togglePassword = (): void => setHidePassword(prev => !prev);

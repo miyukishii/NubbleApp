@@ -1,7 +1,7 @@
 import React from 'react';
-import {TextStyle} from 'react-native';
+import { TextStyle } from 'react-native';
 
-import {createText} from '@shopify/restyle';
+import { createText } from '@shopify/restyle';
 
 import { Theme } from '../../../theme/theme';
 
@@ -18,19 +18,19 @@ interface TextProps extends SRTextProps {
 }
 
 export function Text(
-  {children, preset = 'paragraphMedium',
+  { children, preset = 'paragraphMedium',
     style,
     bold,
     italic,
     semibold,
-    ...SRTextProps}: TextProps
+    ...SRTextProps }: TextProps
 ) {
   const fontFamily = getFontFamily(preset, bold, italic, semibold);
 
-  return <SRText color="backgroundConstrast" style={[$fontSizes[preset], {fontFamily}, style]} {...SRTextProps}>{children}</SRText>;
+  return <SRText color="backgroundConstrast" style={[$fontSizes[preset], { fontFamily }, style]} {...SRTextProps}>{children}</SRText>;
 }
 
-function getFontFamily(preset?:TextVariants ,bold?: boolean, italic?: boolean, semibold?: boolean) {
+function getFontFamily(preset?:TextVariants, bold?: boolean, italic?: boolean, semibold?: boolean) {
   if (preset === 'headingLarge' || preset === 'headingMedium' || preset === 'headingSmall') {
     return italic ? $fontFamily.boldItalic : $fontFamily.bold;
   }
