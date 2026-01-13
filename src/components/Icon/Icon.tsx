@@ -25,6 +25,10 @@ import { SearchIcon } from '../../assets/icons/SearchIcon';
 import { SettingsIcon } from '../../assets/icons/SettingsIcon';
 import { TrashIcon } from '../../assets/icons/TrashIcon';
 import { Theme, ThemeColors } from '../../theme/theme';
+import { CameraIcon } from '../../assets/icons/CameraIcon';
+import { CameraClick } from '../../assets/icons/CameraClick';
+import { FlashOnIcon } from '../../assets/icons/FlashOnIcon';
+import { FlashOffIcon } from '../../assets/icons/FlashOffIcon';
 
 export interface IconBaseProps {
   size?: number;
@@ -56,6 +60,8 @@ const iconRegistry = {
   bellOn: BellOnIcon,
   bookMark: BookMarkICon,
   bookMarkFill: BookMarkFillICon,
+  camera: CameraIcon,
+  cameraClick: CameraClick,
   chat: ChatIcon,
   chatOn: ChatOnIcon,
   checkRound: CheckRoundIcon,
@@ -63,6 +69,8 @@ const iconRegistry = {
   errorRound: ErrorRoundIcon,
   eyeOn: EyeOnIcon,
   eyeOff: EyeOffIcon,
+  flashOn: FlashOnIcon,
+  flashOff: FlashOffIcon,
   heart: HeartIcon,
   heartFill: HeartFillIcon,
   home: HomeIcon,

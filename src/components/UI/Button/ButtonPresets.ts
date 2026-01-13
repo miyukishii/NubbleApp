@@ -17,7 +17,7 @@ export const buttonPresets: Record<ButtonVariants, {
       container: {
         backgroundColor: 'buttonPrimary',
       },
-      content: 'prymaryConstrast',
+      content: 'primaryConstrast',
     },
     disabled: {
       container: {
@@ -40,6 +40,20 @@ export const buttonPresets: Record<ButtonVariants, {
         borderColor: 'gray4',
       },
       content: 'gray2',
+    },
+  },
+  ghost: {
+    default: {
+      container: {
+        backgroundColor: 'white70',
+      },
+      content: 'grayBlack',
+    },
+    disabled: {
+      container: {
+        backgroundColor: 'white70',
+      },
+      content: 'gray1',
     },
   },
 };

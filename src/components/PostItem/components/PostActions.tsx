@@ -7,18 +7,25 @@ import { Icon, IconProps } from '../../../components/Icon/Icon';
 import { Box } from '../../../components/UI/Box/Box';
 import { TouchbleOpacityBox } from '../../../components/UI/Box/TouchbleOpacityBox';
 import { Text } from '../../../components/UI/Text/Text';
+import { useNavigation } from '@react-navigation/native';
 
-export function PostActions({ reactionCount, commentCount, favoriteCount }: Pick<Post, 'reactionCount'| 'commentCount' | 'favoriteCount' >): React.JSX.Element {
+export function PostActions({ reactionCount, commentCount, favoriteCount, id }: Pick<Post, 'reactionCount'| 'commentCount' | 'favoriteCount' | 'id'>): React.JSX.Element {
   const [isLiked, setIsLiked] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
+
+  const navigation = useNavigation();
 
   function likePost(): void {
     setIsLiked(!isLiked);
   }
-  function openComments(): void {}
   function save(): void {
     setIsSaved(!isSaved);
   }
+  const navigateToPostCommentScreen = (): void => {
+    navigation.navigate('PostCommentScreen', {
+      postId: id,
+    });
+  };
   return (
     <Box
       marginTop="s16"
@@ -36,7 +43,7 @@ export function PostActions({ reactionCount, commentCount, favoriteCount }: Pick
         text={reactionCount}
       />
       <Item
-        onPress={openComments}
+        onPress={navigateToPostCommentScreen}
         iconName={{
           default: 'comment',
         }}

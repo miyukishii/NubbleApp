@@ -5,7 +5,7 @@ import { Text } from '../Text/Text';
 import { buttonPresets } from './ButtonPresets';
 
 
-export type ButtonVariants = 'primary' | 'outline';
+export type ButtonVariants = 'primary' | 'outline' | 'ghost';
 
 interface ButtonProps extends TouchbleOpacityBoxProps {
   preset?: ButtonVariants;

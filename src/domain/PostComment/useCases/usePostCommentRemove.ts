@@ -20,6 +20,9 @@ export function usePostCommentRemove(
       queryClient.invalidateQueries({
         queryKey: [QueryKeys.PostCommentList, postId],
       });
+      queryClient.invalidateQueries({
+        queryKey: [QueryKeys.PostList],
+      });
       showToast({
         message: 'Comentário excluído com sucesso!',
         type: 'success',

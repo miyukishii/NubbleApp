@@ -18,7 +18,7 @@ export function PostItem({ item }: {item: Post}): React.JSX.Element {
     <Box paddingHorizontal="s20" marginBottom="s24">
       <ProfileUser user={author} />
       <PostImage imageURL={item.imageURL} />
-      <PostActions commentCount={item.commentCount} favoriteCount={item.favoriteCount} reactionCount={item.reactionCount} />
+      <PostActions commentCount={item.commentCount} favoriteCount={item.favoriteCount} reactionCount={item.reactionCount} id={item.id} />
       <PostBottom author={item.author} text={item.text} commentCount={item.commentCount} id={item.id} />
     </Box>
   );

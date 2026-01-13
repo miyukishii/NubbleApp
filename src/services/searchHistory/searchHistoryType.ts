@@ -1,6 +1,5 @@
 import { User } from '../../domain/Users/userTypes';
 
-
 export type SearchHistoryService = {
   userList: User[];
   addUser: (user: User) => void;

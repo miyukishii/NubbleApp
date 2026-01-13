@@ -1,3 +1,5 @@
+import { ImageForUpload } from "../../services/multimedia/multimediaType";
+
 export interface Post {
   id: string;
   text: string;
@@ -38,4 +40,8 @@ export interface PostAPI {
     favorite_count: string;
     comments_count: string;
   },
+}
+export interface ICreatePostParams {
+  text: string;
+  imageCover: ImageForUpload;
 }

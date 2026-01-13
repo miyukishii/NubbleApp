@@ -4,7 +4,8 @@ export enum QueryKeys {
   PostList = 'PostList',
   PostCommentList = 'PostCommentList',
   IsUserNameAvailable= 'IsUserNameAvailable',
-  IsEmailAvailable= 'IsEmailAvailable'
+  IsEmailAvailable= 'IsEmailAvailable',
+  CameraRollList = 'CameraRollList'
 }
 
 export enum StatusHTTP {

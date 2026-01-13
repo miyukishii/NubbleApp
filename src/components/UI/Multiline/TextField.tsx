@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { TextInput, TextInputProps } from 'react-native';
 
 import { useTheme } from '@shopify/restyle';
@@ -10,26 +10,22 @@ import { $fontFamily, Text } from '../Text/Text';
 
 import { $TextFieldContainer } from './styles';
 
-export interface TextFieldProps extends TextInputProps {
+export interface MultilineProps extends TextInputProps {
   label?: string;
   placeholder: string;
   errorMessage?: string;
-  RightComponent?: React.ReactElement;
-  LeftComponent?: React.ReactElement;
   boxProps?: BoxProps;
   containerProps?:BoxProps;
 }
 
-export function TextField({
+export function Multiline({
   label,
   placeholder,
   errorMessage,
-  RightComponent,
-  LeftComponent,
   boxProps,
   containerProps,
   ...rest
-}: TextFieldProps) {
+}: MultilineProps) {
   const { colors } = useTheme<Theme>();
   const inputRef = useRef<TextInput>(null);
 
@@ -44,16 +40,15 @@ export function TextField({
           <Text preset="paragraphMedium" semibold marginBottom="s8">{label}</Text>
         )}
         <Box {...$TextFieldContainer({ isError: !!errorMessage })} {...containerProps}>
-          {LeftComponent}
           <TextInput
             {...rest}
             ref={inputRef}
             autoCapitalize="none"
+            multiline
             placeholderTextColor={colors.gray2}
             placeholder={placeholder}
             style={{ fontFamily: $fontFamily.regular, flex: 1 }}
           />
-          {RightComponent}
         </Box>
         {
           errorMessage && (

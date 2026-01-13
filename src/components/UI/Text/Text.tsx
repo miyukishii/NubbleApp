@@ -10,7 +10,7 @@ type SRTextProps = React.ComponentProps<typeof SRText>;
 
 type TextVariants = 'headingLarge' | 'headingMedium' | 'headingSmall' | 'headingSmall' | 'paragraphLarge' | 'paragraphMedium' | 'paragraphSmall' | 'paragraphCaption' | 'paragraphCaptionSmall'
 
-interface TextProps extends SRTextProps {
+export interface TextProps extends SRTextProps {
   preset?: TextVariants;
   bold?: boolean;
   italic?: boolean;

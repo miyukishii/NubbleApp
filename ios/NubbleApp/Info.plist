@@ -52,5 +52,7 @@
 	<false/>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Para criar novos posts</string>
+  <key>NSCameraUsageDescription</key>
+  <string>$(PRODUCT_NAME) precisa acessar a sua câmera para criar novos posts</string>
 </dict>
 </plist>

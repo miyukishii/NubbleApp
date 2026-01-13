@@ -26,6 +26,9 @@ export function usePostCommentCreate(
       queryClient.invalidateQueries({
         queryKey: [QueryKeys.PostCommentList, postId],
       });
+      queryClient.invalidateQueries({
+        queryKey: [QueryKeys.PostList],
+      });
       Keyboard.dismiss();
       setMessage('');
       showToast({
