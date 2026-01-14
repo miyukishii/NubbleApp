@@ -8,6 +8,7 @@ import { PermissionManager } from '../../../components/PermissionManager/Permiss
 import { Camera, Templates, useCameraDevice, useCameraFormat } from 'react-native-vision-camera'
 import { useIsFocused } from '@react-navigation/native';
 import { useAppState } from '../../../hooks/useAppState';
+import { multimediaService } from '../../../services/multimedia/multimediaService';
 
 const CAMERA_VIEW = Dimensions.get('screen').width;
 const CONTROL_HEIGHT = (Dimensions.get('screen').height - CAMERA_VIEW) / 2;
@@ -39,7 +40,7 @@ export function CameraScreen({ navigation }: AppScreenProps<'CameraScreen'>) {
       { flash: isFlashOn ? 'on' : 'off' }
     );
     navigation.navigate('PublishPostScreen', {
-      imageUri: `file://${photoFile.path}`
+      imageUri: multimediaService.prepareImageUri(photoFile.path)
     })
   }
 

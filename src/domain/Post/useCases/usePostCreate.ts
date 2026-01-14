@@ -46,7 +46,7 @@ export function usePostCreate(
     description: string;
     imageUri: string
   }): Promise<void> => {
-    const imageForUpload = multimediaService.prepareImageForUpload(imageUri);
+    const imageForUpload = await multimediaService.prepareImageForUpload(imageUri);
 
     mutate({ text: description, imageCover: imageForUpload });
   };

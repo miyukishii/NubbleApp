@@ -47,7 +47,7 @@ export function PublishPostScreen({ route }: AppScreenProps<'PublishPostScreen'>
       </Box>
       <Box>
         <Text bold preset='headingSmall'>
-        Escreva uma legenda
+          Escreva uma legenda
         </Text>
         <Multiline
           value={description}
