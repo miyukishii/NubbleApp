@@ -45,8 +45,8 @@ export function TextMessage({
         />
         <TouchbleOpacityBox onPress={onPressSend} disabled={sendIsDisabled || loading}>
           {loading ?
-            (<ActivityIndicator color="primary" />)
-            : (<Text color={sendIsDisabled ? 'gray2' : 'primary'} bold>
+            (<ActivityIndicator color="greenPrimary" />)
+            : (<Text color={sendIsDisabled ? 'gray2' : 'greenPrimary'} bold>
             Enviar
             </Text>
             )}

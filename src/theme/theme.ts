@@ -1,48 +1,10 @@
 import { ViewStyle } from 'react-native';
 
 import { createTheme } from '@shopify/restyle';
-
-export const palette = {
-  greenPrimary: '#074C4E',
-  greenPrimaryLight: '#EAF6F6',
-  carrotSecondary: '#F86F2D',
-  carrotSecondaryLight: '#FAE6DD',
-  greenSuccess: '#4ABC86',
-  greenSuccessLight: '#D8FFEC',
-  redError: '#EA3838',
-  redErrorLight: '#FBECEC',
-
-  black60: 'rgba(0,0,0,0.6)',
-  grayBlack: '#000000',
-  gray1: '#636363',
-  gray2: '#8E8E8E',
-  gray3: '#B3B3B3',
-  gray4: '#E1E1E1',
-  gray5: '#F5F5F5',
-  grayWhite: '#FFFFFF',
-  white70: 'rgba(255,255,255,0.7)'
-};
+import { colors } from './colors';
 
 export const theme = createTheme({
-  colors: {
-    ...palette,
-    primary: palette.greenPrimary,
-    primaryConstrast: palette.grayWhite,
-
-    buttonPrimary: palette.greenPrimary,
-
-    background: palette.grayWhite,
-    backgroundConstrast: palette.grayBlack,
-
-    error: palette.redError,
-    errorLight: palette.redErrorLight,
-
-    success: palette.greenSuccess,
-    successLight: palette.greenSuccessLight,
-
-    favorite: palette.redError,
-    saved: palette.carrotSecondary,
-  },
+  colors: colors.lightTheme,
   spacing: {
     s4: 4,
     s8: 8,
@@ -67,6 +29,10 @@ export const theme = createTheme({
   },
 });
 
+export const darkTheme = {
+  ...theme,
+  colors: colors.darkTheme,
+}
 
 export const $shadowProps: ViewStyle = {
   elevation: 7,
@@ -75,7 +41,6 @@ export const $shadowProps: ViewStyle = {
   shadowRadius: 12,
   shadowOffset: { width: 0, height: -3 },
 };
-
 
 export type Theme = typeof theme;
 export type ThemeColors = keyof Theme['colors'];

@@ -4,8 +4,9 @@ import { ImageBackground, ViewStyle, } from 'react-native';
 import { Text } from '../../../../components/UI/Text/Text';
 import { Icon } from '../../../../components/Icon/Icon';
 import { useNavigation } from '@react-navigation/native';
+import { images } from './../../../../assets';
 
-import imagePlaceholder from '../../../../assets/images/image_placeholder.png';
+
 
 interface Props {
   selectedImageUri?: string;
@@ -28,7 +29,7 @@ export function Header({ selectedImageUri, imageWidth }: Props) {
   return (
     <Box>
       <ImageBackground
-        source={selectedImageUri ? { uri: selectedImageUri } : imagePlaceholder}
+        source={selectedImageUri ? { uri: selectedImageUri } : images.imagePlaceholder}
         style={[
           $StyledImageBackground,
           {

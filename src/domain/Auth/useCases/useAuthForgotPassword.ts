@@ -19,7 +19,8 @@ export function useAuthForgotPassword() {
         buttonText: 'Voltar ao início',
         icon: {
           name: 'messageRound',
-          color: 'primary',
+          color: 'iconColor',
+          fillColor: 'iconFillColor',
           size: 48,
         },
       });

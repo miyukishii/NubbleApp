@@ -9,6 +9,7 @@ import { UserScreen } from '../screens/app/UserScreen/UserScreen';
 import { AppBottomTabParamList, AppTabNavigator } from './AppTabNavigator';
 import { PublishPostScreen } from '../screens/app/PublishPostScreen/PublishPostScreen';
 import { CameraScreen } from '../screens/app/CameraScreen/CameraScreen';
+import { DarkModeScrren } from '../screens/app/DarkModeScreen/DarkModeScreen';
 
 export type AppStackParamList = {
   AppTabNavigator: NavigatorScreenParams<AppBottomTabParamList>;
@@ -23,7 +24,8 @@ export type AppStackParamList = {
   PublishPostScreen:{
     imageUri: string;
   };
-    CameraScreen: undefined;
+  CameraScreen: undefined;
+  DarkModeScreen: undefined;
 }
 const Stack = createNativeStackNavigator<AppStackParamList>();
 
@@ -43,6 +45,7 @@ export function AppStack() {
       <Stack.Screen name="SearchScreen" component={SearchScreen} />
       <Stack.Screen name="PublishPostScreen" component={PublishPostScreen} />
       <Stack.Screen name="CameraScreen" component={CameraScreen} />
+      <Stack.Screen name="DarkModeScreen" component={DarkModeScrren} />
     </Stack.Navigator>
   );
 }

@@ -5,7 +5,6 @@ import { storage } from '../storage/storage';
 
 import { SearchHistoryService } from './searchHistoryType';
 
-
 const useSearchHistoryStore = create<SearchHistoryService>()(
   persist(
     (set, get) => ({
@@ -44,7 +43,7 @@ export function useSearchHistoryZustand(): SearchHistoryService['userList'] {
   return useSearchHistoryStore(state => state.userList);
 }
 
-export function useSearchHistoryService(): Omit<SearchHistoryService,'userList'> {
+export function useSearchHistoryService(): Omit<SearchHistoryService, 'userList'> {
 
   const addUser = useSearchHistoryStore(state => state.addUser);
   const removeUser = useSearchHistoryStore(state => state.removeUser);

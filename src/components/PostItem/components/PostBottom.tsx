@@ -25,7 +25,7 @@ export function PostBottom({ author, text, commentCount, id }: Pick<Post, 'autho
       {
         commentCount > 0 && (
           <TouchbleOpacityBox marginTop="s8" onPress={navigateToPostCommentScreen}>
-            <Text color="greenPrimary" bold preset="paragraphSmall">ver {commentCount} comentários</Text>
+            <Text color='primary' bold preset="paragraphSmall">ver {commentCount} comentários</Text>
           </TouchbleOpacityBox>
         )
       }

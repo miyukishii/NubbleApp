@@ -2,8 +2,7 @@ import React from 'react';
 import { Image, Pressable } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
-
-import userNoImage from '../../assets/images/user.png';
+import { images } from '../../assets';
 
 export interface ProfileAvatarProps {
   userId?: number;
@@ -30,7 +29,7 @@ export function ProfileAvatar({ userId, imageUrl, size = 32, borderRadius = 14, 
   return (
     <Pressable onPress={goToUserProfile}>
       <Image
-        source={imageUrl ? { uri: imageUrl } : userNoImage}
+        source={imageUrl ? { uri: imageUrl } : images.userPlaceholder}
         style={{ width: size, height: size, borderRadius: borderRadius }}
       />
     </Pressable>

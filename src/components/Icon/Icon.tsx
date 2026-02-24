@@ -3,6 +3,7 @@ import { Pressable } from 'react-native';
 import { useTheme } from '@shopify/restyle';
 
 import { ArrowLeftIcon } from '../../assets/icons/ArrowLeftIcon';
+import { ArrowRightIcon } from '../../assets/icons/ArrowRighttIcon';
 import { BellIcon } from '../../assets/icons/BellIcon';
 import { BellOnIcon } from '../../assets/icons/BellOnIcon';
 import { BookMarkFillICon } from '../../assets/icons/BookMarkFillIcon';
@@ -29,32 +30,41 @@ import { CameraIcon } from '../../assets/icons/CameraIcon';
 import { CameraClick } from '../../assets/icons/CameraClick';
 import { FlashOnIcon } from '../../assets/icons/FlashOnIcon';
 import { FlashOffIcon } from '../../assets/icons/FlashOffIcon';
+import { ChevronRightIcon } from '../../assets/icons/ChevronRightIcon';
 
 export interface IconBaseProps {
   size?: number;
   color?: string;
+  fillColor?: string;
 }
 
 export interface IconProps{
   name: IconsNames;
   size?: number;
   color?: ThemeColors;
+  fillColor?: ThemeColors;
   onPress?: () => void;
 }
 
-export function Icon({ name, size = 20, color = 'backgroundConstrast', onPress }: IconProps) {
+export function Icon({ name, size = 20, color = 'backgroundConstrast', fillColor = 'background', onPress }: IconProps) {
   const { colors } = useTheme<Theme>();
   const SVGIcon = iconRegistry[name];
 
+  const iconProps: React.ComponentProps<typeof SVGIcon> = {
+    size, color: colors[color],
+    fillColor: colors[fillColor]
+  }
+
   if (onPress) {
     return (<Pressable hitSlop={10} onPress={onPress}>
-      <SVGIcon size={size} color={colors[color]} />
+      <SVGIcon {...iconProps} />
     </Pressable>);
   }
-  return <SVGIcon size={size} color={colors[color]} />;
+  return <SVGIcon {...iconProps} />;
 }
 
 const iconRegistry = {
+  arrowRight: ArrowRightIcon,
   arrowLeft: ArrowLeftIcon,
   bell: BellIcon,
   bellOn: BellOnIcon,
@@ -65,6 +75,7 @@ const iconRegistry = {
   chat: ChatIcon,
   chatOn: ChatOnIcon,
   checkRound: CheckRoundIcon,
+  chevronRight: ChevronRightIcon,
   comment: CommentIcon,
   errorRound: ErrorRoundIcon,
   eyeOn: EyeOnIcon,

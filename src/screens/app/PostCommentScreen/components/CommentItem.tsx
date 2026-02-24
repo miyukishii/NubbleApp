@@ -54,7 +54,7 @@ export function CommentItem({ item, postId }: {item: PostComment, postId: number
           </Text>
           <Text
             preset="paragraphSmall"
-            color="gray1"
+            color="paragraph"
           >
             {item.message} - {formatRelative(item.createdAt)}
           </Text>

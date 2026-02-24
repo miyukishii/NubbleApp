@@ -7,6 +7,7 @@ import { useAuthCredentials } from '../services/authCredentials/useAuthCredentia
 
 import { AppStack } from './AppStack';
 import { AuthStack } from './AuthStack';
+import { OnboardingStack } from './OnboardingStack';
 
 export function Router() {
   const { authCredentials, isLoading } = useAuthCredentials();
@@ -29,7 +30,8 @@ export function Router() {
       {authenticated ? (
         <AppStack />
       ) : (
-        <AuthStack />
+        <OnboardingStack />
+        // <AuthStack />
       )}
     </NavigationContainer>
   );

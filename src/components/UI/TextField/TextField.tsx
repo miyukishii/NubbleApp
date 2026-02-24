@@ -43,7 +43,7 @@ export function TextField({
         {label && (
           <Text preset="paragraphMedium" semibold marginBottom="s8">{label}</Text>
         )}
-        <Box {...$TextFieldContainer({ isError: !!errorMessage })} {...containerProps}>
+        <Box {...$TextFieldContainer({ isError: !!errorMessage })} {...containerProps} backgroundColor='grayWhite'>
           {LeftComponent}
           <TextInput
             {...rest}
@@ -51,13 +51,13 @@ export function TextField({
             autoCapitalize="none"
             placeholderTextColor={colors.gray2}
             placeholder={placeholder}
-            style={{ fontFamily: $fontFamily.regular, flex: 1 }}
+            style={{ fontFamily: $fontFamily.regular, flex: 1, color: colors.grayBlack }}
           />
           {RightComponent}
         </Box>
         {
           errorMessage && (
-            <Text preset="paragraphSmall" bold color="error">{errorMessage}</Text>
+            <Text mt='s4' preset="paragraphSmall" bold color="error">{errorMessage}</Text>
           )
         }
       </Box>

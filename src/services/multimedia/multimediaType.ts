@@ -1,4 +1,3 @@
-
 export interface ImageForUpload {
   uri: string;
   name: string;
