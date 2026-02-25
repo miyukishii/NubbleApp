@@ -4,12 +4,16 @@ import { Icon } from '../../../../components/Icon/Icon';
 import { PressableBox } from '../../../../components/UI/Box/TouchbleOpacityBox';
 import { PageTemplateProps } from './PageTemplate';
 
-type BottomMenuProps = Pick<PageTemplateProps, 'onPressNext' | 'onPressSkip'>
+type BottomMenuProps = Pick<PageTemplateProps, 'onPressNext' | 'onPressSkip'> & {
+  isLastPage: boolean;
+}
 
 export function BottomMenu({
+  isLastPage,
   onPressSkip,
   onPressNext
 }:BottomMenuProps) {
+  const nextText = isLastPage ? 'Começar' : 'Próximo'
   return (
     <Box
       flexDirection='row'
@@ -18,7 +22,7 @@ export function BottomMenu({
         hitSlop={10}
         onPress={onPressSkip}
       >
-        <Text>Pular</Text>
+        <Text color='gray2' semibold>Pular</Text>
       </PressableBox>
       <PressableBox
         hitSlop={10}
@@ -26,8 +30,8 @@ export function BottomMenu({
         alignItems='center'
         onPress={onPressNext}
       >
-        <Text marginRight='s4' bold>Próximo</Text>
-        <Icon name='arrowRight' />
+        <Text marginRight='s4' bold>{nextText}</Text>
+        <Icon name='arrowRight' color='carrotSecondary' />
       </PressableBox>
     </Box>
   );
