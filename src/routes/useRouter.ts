@@ -11,7 +11,7 @@ export function useRouter(): Stacks {
   if (isLoading) {
     return 'Loading';
   }
-  if (showOboarding) {
+  if (showOboarding.showOnboarding) {
     return 'Onboarding';
   }
   if (authenticated) {
