@@ -1,6 +1,7 @@
 import { Appearance, ColorSchemeName, Platform, StatusBar } from "react-native";
 import { ColorScheme, ThemePreference } from "./settingsType";
 import { colors } from "../../theme/colors";
+import { hide, isVisible } from 'react-native-bootsplash'
 
 function onThemePreferenceChange(themePreference: ThemePreference): ColorScheme {
   if (themePreference === 'system') {
@@ -32,8 +33,21 @@ function handleStatusBar(appColor: ColorScheme) {
   }
 }
 
+async function hideSplashScreen() {
+  try {
+    const _isVisible = await isVisible()
+    if (_isVisible) {
+      hide({ fade: true })
+    }
+  }catch (err) {
+    console.log('Erro ao chamar hideSpashScreen:', err)
+    hide()
+  }
+}
+
 export const settingsService = {
   onThemePreferenceChange,
   onSystemChange,
-  handleStatusBar
+  handleStatusBar,
+  hideSplashScreen
 }
