@@ -8,7 +8,7 @@ import { PostActions } from './components/PostActions';
 import { PostBottom } from './components/PostBottom';
 import { PostImage } from './components/PostImage';
 
-export function PostItem({ item }: {item: Post}): React.JSX.Element {
+export function PostItem({ item, hideCommentActions }: {item: Post, hideCommentActions: boolean}): React.JSX.Element {
   const author = {
     profileUrl: item.author.profileURL,
     id: Number(item.author.id),
@@ -18,8 +18,8 @@ export function PostItem({ item }: {item: Post}): React.JSX.Element {
     <Box paddingHorizontal="s20" marginBottom="s24">
       <ProfileUser user={author} />
       <PostImage imageURL={item.imageURL} />
-      <PostActions commentCount={item.commentCount} favoriteCount={item.favoriteCount} reactionCount={item.reactionCount} id={item.id} />
-      <PostBottom author={item.author} text={item.text} commentCount={item.commentCount} id={item.id} />
+      <PostActions hideCommentActions={hideCommentActions} commentCount={item.commentCount} favoriteCount={item.favoriteCount} reactionCount={item.reactionCount} id={item.id} />
+      <PostBottom hideCommentActions={hideCommentActions} author={item.author} text={item.text} commentCount={item.commentCount} id={item.id} />
     </Box>
   );
 }

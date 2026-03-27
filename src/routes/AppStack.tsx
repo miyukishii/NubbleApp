@@ -16,6 +16,7 @@ export type AppStackParamList = {
   SettingsScreen: undefined;
   PostCommentScreen: {
     postId: string;
+    showPost: boolean;
   };
   UserScreen: {
     userId: number;

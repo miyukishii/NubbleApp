@@ -9,7 +9,7 @@ import { TouchbleOpacityBox } from '../../../components/UI/Box/TouchbleOpacityBo
 import { Text } from '../../../components/UI/Text/Text';
 import { useNavigation } from '@react-navigation/native';
 
-export function PostActions({ reactionCount, commentCount, favoriteCount, id }: Pick<Post, 'reactionCount'| 'commentCount' | 'favoriteCount' | 'id'>): React.JSX.Element {
+export function PostActions({ reactionCount, commentCount, favoriteCount, id, hideCommentActions = false }: Pick<Post, 'reactionCount'| 'commentCount' | 'favoriteCount' | 'id'> & { hideCommentActions?: boolean }): React.JSX.Element {
   const [isLiked, setIsLiked] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
 
@@ -24,6 +24,7 @@ export function PostActions({ reactionCount, commentCount, favoriteCount, id }: 
   const navigateToPostCommentScreen = (): void => {
     navigation.navigate('PostCommentScreen', {
       postId: id,
+      showPost: false,
     });
   };
   return (
@@ -47,6 +48,7 @@ export function PostActions({ reactionCount, commentCount, favoriteCount, id }: 
         iconName={{
           default: 'comment',
         }}
+        disabled={hideCommentActions}
         text={commentCount}
       />
       <Item
@@ -71,10 +73,11 @@ interface ItemProps {
     marked?: IconProps['name'];
   };
   text: number;
+  disabled?: boolean;
 }
 
 function Item({
-  onPress, isMarked, markedColor, iconName, text,
+  onPress, isMarked, markedColor, iconName, text, disabled
 }: ItemProps) {
   return (
     <TouchbleOpacityBox
@@ -82,6 +85,7 @@ function Item({
       flexDirection="row"
       alignItems="center"
       mr="s24"
+      disabled={disabled}
     >
       <Icon name={isMarked && iconName.marked ? iconName.marked : iconName.default} color={isMarked ? markedColor : undefined} />
       <Text ml="s4" bold preset="paragraphSmall">{text}</Text>

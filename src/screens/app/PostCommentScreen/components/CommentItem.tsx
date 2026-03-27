@@ -40,6 +40,7 @@ export function CommentItem({ item, postId }: {item: PostComment, postId: number
   return (
     <Pressable disabled={!isAllowedToRemove} onLongPress={confirmRemove}>
       <Box
+        paddingHorizontal='s24'
         marginBottom="s16"
         flexDirection="row"
         alignItems="center"

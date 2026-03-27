@@ -16,7 +16,13 @@ async function create(params: ICreatePostParams): Promise<Post> {
   return postAdapter.toPost(newPost);
 }
 
+async function getById(postId: number): Promise<Post> {
+  const post = await postApi.getById(postId);
+  return postAdapter.toPost(post);
+}
+
 export const postService = {
   getList,
   create,
+  getById,
 };

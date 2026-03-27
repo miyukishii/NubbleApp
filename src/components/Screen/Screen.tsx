@@ -6,7 +6,7 @@ import { useAppTheme } from '../../hooks/useAppTheme';
 import { Box, BoxProps } from '../UI/Box/Box';
 
 import { ScreenHeader } from './components/ScreenHeader';
-import { ScrollViewContainer, ViewContainer } from './components/ScrennContainer';
+import { ScrollViewContainer, ViewContainer } from './components/ScreenContainer';
 export interface ScreenProps extends BoxProps {
   children: React.ReactNode;
   canGoBack?: boolean;

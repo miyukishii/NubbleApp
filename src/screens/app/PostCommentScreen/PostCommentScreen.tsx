@@ -10,10 +10,13 @@ import { AppScreenProps } from '../../../routes/navigationType';
 import { CommentBottom } from './components/CommentBottom';
 import { CommentCreate } from './components/CommentCreate';
 import { CommentItem } from './components/CommentItem';
+import { usePostGetById } from '../../../domain/Post/useCases/usePostGetById';
+import { PostItem } from '../../../components/PostItem/PostItem';
 
 export function PostCommentScreen({ route }: AppScreenProps<'PostCommentScreen'>) {
   const id = route.params.postId;
   const postId = Number(id);
+  const showPost = route.params.showPost || false;
 
   const {
     dataList: commentList,
@@ -22,6 +25,9 @@ export function PostCommentScreen({ route }: AppScreenProps<'PostCommentScreen'>
     refresh,
     hasNextPage,
   } = usePostCommentList(postId);
+  const {
+    postData
+  } = usePostGetById(postId, showPost)
   const { bottom } = useAppSafeArea();
 
   function renderItem({ item }: ListRenderItemInfo<PostComment>): React.JSX.Element {
@@ -31,9 +37,12 @@ export function PostCommentScreen({ route }: AppScreenProps<'PostCommentScreen'>
   return (
     <Screen
       style={{ flex: 1 }}
+      noHorizontalPadding
       canGoBack
       showGoBack={false}
-      title="Comentários"
+      title={
+        showPost ? "Post" : "Comentários"
+      }
     >
       <FlatList
         keyExtractor={(item) => item.id.toString()}
@@ -42,6 +51,7 @@ export function PostCommentScreen({ route }: AppScreenProps<'PostCommentScreen'>
         showsVerticalScrollIndicator={false}
         refreshControl={<RefreshControl refreshing={isLoading} onRefresh={refresh} />}
         refreshing={isLoading}
+        ListHeaderComponent={postData && <PostItem hideCommentActions={showPost} item={postData} />}
         ListFooterComponent={<CommentBottom hasNextPage={hasNextPage} loadMore={fetchNextPage} />}
         contentContainerStyle={{ paddingBottom: bottom }}
       />

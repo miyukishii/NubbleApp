@@ -22,7 +22,16 @@ async function create(params: ICreatePostParams): Promise<PostAPI> {
   return response.data;
 }
 
+async function getById(postId: number): Promise<PostAPI> {
+  const response = await api.get<PostAPI>(
+    `${PATH}/${postId}`,
+  );
+  return response.data;
+}
+
+
 export const postApi = {
   getList,
-  create
+  create,
+  getById
 };

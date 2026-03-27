@@ -15,7 +15,7 @@ interface PaginatedListOption {
   staleTime?: number;
 }
 
-interface IUsePaginationList<Data> {
+export interface IUsePaginationList<Data> {
   queryKey: readonly unknown[];
   getList: ({ page, per_page }: {page: number, per_page: number}) => Promise<Page<Data>>
   options?: PaginatedListOption
