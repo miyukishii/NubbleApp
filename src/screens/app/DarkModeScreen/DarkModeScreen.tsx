@@ -1,9 +1,11 @@
 import { FlatList, ListRenderItemInfo } from 'react-native';
+
 import { Screen } from '../../../components/Screen/Screen';
-import { AppScreenProps } from '../../../routes/navigationType';
-import { MenuItem, RadioButtonItemProps, } from './components/MenuItem';
 import { Separator } from '../../../components/UI/Separator/Separator';
+import { AppScreenProps } from '../../../routes/navigationType';
 import { useSettingsService, useThemePreference } from '../../../services/settings/useSettings';
+
+import { MenuItem, RadioButtonItemProps, } from './components/MenuItem';
 
 const options: RadioButtonItemProps [] = [
   { label: 'Ativado', themePreference: 'dark' },

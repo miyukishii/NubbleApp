@@ -2,10 +2,11 @@ import { Dimensions, ListRenderItemInfo } from 'react-native';
 
 import { InfinityScrollList } from '../../../components/InfinityScrollList/InfinityScrollList';
 import { Screen } from '../../../components/Screen/Screen';
-import { AppTabScreenProps } from '../../../routes/navigationType';
 import { postReactionService } from '../../../domain/PostReaction/postReactionService';
 import { PostReaction } from '../../../domain/PostReaction/postReactionTypes';
+import { AppTabScreenProps } from '../../../routes/navigationType';
 import { QueryKeys } from '../../../types/infraTypes';
+
 import { FavoriteItem } from './components/FavoritetItem';
 
 const NUM_COL = 2;

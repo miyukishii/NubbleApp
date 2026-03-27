@@ -1,4 +1,5 @@
 import { ImageForUpload } from "../../services/multimedia/multimediaType";
+import { PostReaction, PostReactionAPI } from "../PostReaction/postReactionTypes";
 
 export interface Post {
   id: string;
@@ -13,6 +14,7 @@ export interface Post {
   reactionCount: number;
   commentCount: number;
   favoriteCount: number;
+  reactions: Pick<PostReaction, 'emojiType' | 'postId'>[]
 }
 
 export interface PostAPI {
@@ -34,6 +36,7 @@ export interface PostAPI {
     is_online: boolean;
     full_name: string;
   },
+  reactions: Pick<PostReactionAPI, 'emoji_type' | 'post_id'>[];
   status: string;
   meta: {
     like_count: string;

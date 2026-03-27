@@ -1,8 +1,9 @@
 import { apiAdapter } from '../../api/apiAdapter';
 import { Page } from '../../types/pages';
+
 import { postReactionAdapter } from './postReactionAdapter';
 import { IMyReactionsParams, IPostReaction, postReactionApi } from './postReactionApi';
-import { PostReaction, PostReactionBase } from './postReactionTypes';
+import { PostReaction, PostReactionBase, PostReactionType } from './postReactionTypes';
 
 async function getUserReactions(params: IMyReactionsParams): Promise<Page<PostReaction>> {
   const postReactionPageAPI = await postReactionApi.getUserReactions(params);
@@ -15,7 +16,11 @@ async function reactToPost(params: IPostReaction): Promise<PostReactionBase> {
   ;
 }
 
+function hasReactedToPost(postReaction: Pick<PostReaction, 'emojiType'>[], postReactionType:PostReactionType) {
+  return postReaction.some(reaction => reaction.emojiType === postReactionType)
+}
+
 export const postReactionService = {
   getUserReactions,
-  reactToPost,
+  reactToPost, hasReactedToPost
 };

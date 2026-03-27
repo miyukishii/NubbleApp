@@ -1,6 +1,6 @@
-import { Text } from "../../../../components/UI/Text/Text";
 import { Box, BoxProps } from "../../../../components/UI/Box/Box";
 import { RadioButton } from "../../../../components/UI/RadioButton/RadioButton";
+import { Text } from "../../../../components/UI/Text/Text";
 import { ThemePreference } from "../../../../services/settings/settingsType";
 
 export interface RadioButtonItemProps {

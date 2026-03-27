@@ -1,4 +1,5 @@
 import { ImageProps } from "react-native";
+
 import { images } from "../../../../assets";
 
 export type PageItem = {

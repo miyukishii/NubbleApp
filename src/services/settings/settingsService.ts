@@ -1,7 +1,9 @@
 import { Appearance, ColorSchemeName, Platform, StatusBar } from "react-native";
-import { ColorScheme, ThemePreference } from "./settingsType";
-import { colors } from "../../theme/colors";
 import { hide, isVisible } from 'react-native-bootsplash'
+
+import { colors } from "../../theme/colors";
+
+import { ColorScheme, ThemePreference } from "./settingsType";
 
 function onThemePreferenceChange(themePreference: ThemePreference): ColorScheme {
   if (themePreference === 'system') {

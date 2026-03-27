@@ -1,7 +1,8 @@
-import { Text } from '../../../../components/UI/Text/Text';
-import { Box } from '../../../../components/UI/Box/Box';
 import { Icon } from '../../../../components/Icon/Icon';
+import { Box } from '../../../../components/UI/Box/Box';
 import { PressableBox } from '../../../../components/UI/Box/TouchbleOpacityBox';
+import { Text } from '../../../../components/UI/Text/Text';
+
 import { PageTemplateProps } from './PageTemplate';
 
 type BottomMenuProps = Pick<PageTemplateProps, 'onPressNext' | 'onPressSkip'> & {

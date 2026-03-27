@@ -1,6 +1,6 @@
+import { useTheme } from '@shopify/restyle';
 import { Pressable } from 'react-native';
 
-import { useTheme } from '@shopify/restyle';
 
 import { ArrowLeftIcon } from '../../assets/icons/ArrowLeftIcon';
 import { ArrowRightIcon } from '../../assets/icons/ArrowRighttIcon';
@@ -8,13 +8,18 @@ import { BellIcon } from '../../assets/icons/BellIcon';
 import { BellOnIcon } from '../../assets/icons/BellOnIcon';
 import { BookMarkFillICon } from '../../assets/icons/BookMarkFillIcon';
 import { BookMarkICon } from '../../assets/icons/BookMarkIcon';
+import { CameraClick } from '../../assets/icons/CameraClick';
+import { CameraIcon } from '../../assets/icons/CameraIcon';
 import { ChatIcon } from '../../assets/icons/ChatIcon';
 import { ChatOnIcon } from '../../assets/icons/ChatOnIcon';
 import { CheckRoundIcon } from '../../assets/icons/CheckRoundIcon';
+import { ChevronRightIcon } from '../../assets/icons/ChevronRightIcon';
 import { CommentIcon } from '../../assets/icons/CommentIcon';
 import { ErrorRoundIcon } from '../../assets/icons/ErrorRoundIcon';
 import { EyeOffIcon } from '../../assets/icons/EyeOffIcon';
 import { EyeOnIcon } from '../../assets/icons/EyeOnIcon';
+import { FlashOffIcon } from '../../assets/icons/FlashOffIcon';
+import { FlashOnIcon } from '../../assets/icons/FlashOnIcon';
 import { HeartFillIcon } from '../../assets/icons/HeartFillIcon';
 import { HeartIcon } from '../../assets/icons/HeartIcon';
 import { HomeFillIcon } from '../../assets/icons/HomeFillIcon';
@@ -26,11 +31,6 @@ import { SearchIcon } from '../../assets/icons/SearchIcon';
 import { SettingsIcon } from '../../assets/icons/SettingsIcon';
 import { TrashIcon } from '../../assets/icons/TrashIcon';
 import { Theme, ThemeColors } from '../../theme/theme';
-import { CameraIcon } from '../../assets/icons/CameraIcon';
-import { CameraClick } from '../../assets/icons/CameraClick';
-import { FlashOnIcon } from '../../assets/icons/FlashOnIcon';
-import { FlashOffIcon } from '../../assets/icons/FlashOffIcon';
-import { ChevronRightIcon } from '../../assets/icons/ChevronRightIcon';
 
 export interface IconBaseProps {
   size?: number;

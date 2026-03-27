@@ -18,7 +18,7 @@ export function PostItem({ item, hideCommentActions }: {item: Post, hideCommentA
     <Box paddingHorizontal="s20" marginBottom="s24">
       <ProfileUser user={author} />
       <PostImage imageURL={item.imageURL} />
-      <PostActions hideCommentActions={hideCommentActions} commentCount={item.commentCount} favoriteCount={item.favoriteCount} reactionCount={item.reactionCount} id={item.id} />
+      <PostActions hideCommentActions={hideCommentActions} post={item} />
       <PostBottom hideCommentActions={hideCommentActions} author={item.author} text={item.text} commentCount={item.commentCount} id={item.id} />
     </Box>
   );

@@ -1,7 +1,8 @@
 import { Dimensions, Image } from 'react-native';
 
-import { PageItem } from './onboardingData';
 import { useAppColor } from '../../../../services/settings/useSettings';
+
+import { PageItem } from './onboardingData';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 

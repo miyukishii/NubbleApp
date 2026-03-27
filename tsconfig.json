@@ -4,9 +4,9 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@screens/*": ["src/screens/*"],
-      "@hooks/*": ["src/hooks/*"]
+      "@components/*": ["./src/components/*"],
+      "@screens/*": ["./src/screens/*"],
+      "@hooks/*": ["./src/hooks/*"]
     }
   },
   "include": ["src", "**/*.ts", "**/*.tsx"],

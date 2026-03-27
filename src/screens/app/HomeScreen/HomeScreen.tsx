@@ -1,14 +1,15 @@
 import { ListRenderItemInfo } from 'react-native';
 
+import { InfinityScrollList } from '../../../components/InfinityScrollList/InfinityScrollList';
 import { PostItem } from '../../../components/PostItem/PostItem';
 import { Screen } from '../../../components/Screen/Screen';
+import { postService } from '../../../domain/Post/postService';
 import { Post } from '../../../domain/Post/postTypes';
 import { AppTabScreenProps } from '../../../routes/navigationType';
-import { HomeHeader } from './components/HomeHeader';
-import { InfinityScrollList } from '../../../components/InfinityScrollList/InfinityScrollList';
-
-import { postService } from '../../../domain/Post/postService';
 import { QueryKeys } from '../../../types/infraTypes';
+
+import { HomeHeader } from './components/HomeHeader';
+
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function HomeScreen({ navigation }: AppTabScreenProps<'HomeScreen'>) {

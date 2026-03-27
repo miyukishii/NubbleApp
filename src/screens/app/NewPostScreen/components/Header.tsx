@@ -1,9 +1,11 @@
-import { Button } from '../../../../components/UI/Button/Button';
-import { Box, BoxProps } from '../../../../components/UI/Box/Box';
-import { ImageBackground, ViewStyle, } from 'react-native';
-import { Text } from '../../../../components/UI/Text/Text';
-import { Icon } from '../../../../components/Icon/Icon';
 import { useNavigation } from '@react-navigation/native';
+import { ImageBackground, ViewStyle, } from 'react-native';
+
+import { Icon } from '../../../../components/Icon/Icon';
+import { Box, BoxProps } from '../../../../components/UI/Box/Box';
+import { Button } from '../../../../components/UI/Button/Button';
+import { Text } from '../../../../components/UI/Text/Text';
+
 import { images } from './../../../../assets';
 
 

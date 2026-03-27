@@ -1,16 +1,15 @@
-import { Screen } from '../../../components/Screen/Screen';
-import { AppScreenProps } from '../../../routes/navigationType';
-import { Button } from '../../../components/UI/Button/Button';
-import { Dimensions, Image, ImageStyle } from 'react-native';
-import { Box, BoxProps } from '../../../components/UI/Box/Box';
-
-import { Theme } from '../../../theme/theme';
+import { useState } from 'react';
 import { useTheme } from '@shopify/restyle';
+import { Dimensions, Image, ImageStyle } from 'react-native';
+
+import { Screen } from '../../../components/Screen/Screen';
+import { Box, BoxProps } from '../../../components/UI/Box/Box';
+import { Button } from '../../../components/UI/Button/Button';
+import { Multiline } from '../../../components/UI/Multiline/TextField';
 import { Text } from '../../../components/UI/Text/Text';
 import { usePostCreate } from '../../../domain/Post/useCases/usePostCreate';
-
-import { Multiline } from '../../../components/UI/Multiline/TextField';
-import { useState } from 'react';
+import { AppScreenProps } from '../../../routes/navigationType';
+import { Theme } from '../../../theme/theme';
 
 const IMAGE_WIDTH = Dimensions.get('screen').width / 2;
 

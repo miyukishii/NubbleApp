@@ -1,6 +1,6 @@
 import React from 'react';
-
 import { useNavigation } from '@react-navigation/native';
+
 import { Post } from 'src/domain/Post/postTypes';
 
 import { Box } from '../../UI/Box/Box';

@@ -1,7 +1,9 @@
 import React from 'react';
 import { FlatList, ListRenderItemInfo, RefreshControl } from 'react-native';
 
+import { PostItem } from '../../../components/PostItem/PostItem';
 import { Screen } from '../../../components/Screen/Screen';
+import { usePostGetById } from '../../../domain/Post/useCases/usePostGetById';
 import { PostComment } from '../../../domain/PostComment/postCommentTypes';
 import { usePostCommentList } from '../../../domain/PostComment/useCases/usePostCommentList';
 import { useAppSafeArea } from '../../../hooks/useAppSafeArea';
@@ -10,8 +12,6 @@ import { AppScreenProps } from '../../../routes/navigationType';
 import { CommentBottom } from './components/CommentBottom';
 import { CommentCreate } from './components/CommentCreate';
 import { CommentItem } from './components/CommentItem';
-import { usePostGetById } from '../../../domain/Post/useCases/usePostGetById';
-import { PostItem } from '../../../components/PostItem/PostItem';
 
 export function PostCommentScreen({ route }: AppScreenProps<'PostCommentScreen'>) {
   const id = route.params.postId;

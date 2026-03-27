@@ -1,5 +1,6 @@
-import { Text } from '../../../../components/UI/Text/Text';
 import { Box } from '../../../../components/UI/Box/Box';
+import { Text } from '../../../../components/UI/Text/Text';
+
 import { PageItem } from './onboardingData';
 
 type ContentProps = Omit<PageItem, 'imageHeader'>;

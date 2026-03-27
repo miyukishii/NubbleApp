@@ -1,8 +1,10 @@
-import { persist } from "zustand/middleware";
-import { ColorScheme, SettingsStore, ThemePreference } from "./settingsType";
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
+
 import { storage } from "../storage/storage";
+
 import { settingsService } from "./settingsService";
+import { ColorScheme, SettingsStore, ThemePreference } from "./settingsType";
 
 const useSettingsStore = create<SettingsStore>()(
   persist(

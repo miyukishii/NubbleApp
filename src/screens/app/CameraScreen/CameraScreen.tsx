@@ -1,13 +1,14 @@
-import { AppScreenProps, } from '../../../routes/navigationType';
-import { Dimensions, StyleSheet } from 'react-native';
-import { Box, BoxProps } from '../../../components/UI/Box/Box';
-import { Icon } from '../../../components/Icon/Icon';
-import { useAppSafeArea } from '../../../hooks/useAppSafeArea';
 import { useRef, useState } from 'react';
-import { PermissionManager } from '../../../components/PermissionManager/PermissionManager';
-import { Camera, Templates, useCameraDevice, useCameraFormat } from 'react-native-vision-camera'
 import { useIsFocused } from '@react-navigation/native';
+import { Dimensions, StyleSheet } from 'react-native';
+import { Camera, Templates, useCameraDevice, useCameraFormat } from 'react-native-vision-camera'
+
+import { Icon } from '../../../components/Icon/Icon';
+import { PermissionManager } from '../../../components/PermissionManager/PermissionManager';
+import { Box, BoxProps } from '../../../components/UI/Box/Box';
+import { useAppSafeArea } from '../../../hooks/useAppSafeArea';
 import { useAppState } from '../../../hooks/useAppState';
+import { AppScreenProps, } from '../../../routes/navigationType';
 import { multimediaService } from '../../../services/multimedia/multimediaService';
 
 const CAMERA_VIEW = Dimensions.get('screen').width;

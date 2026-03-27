@@ -1,15 +1,15 @@
 import { NavigatorScreenParams } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import { CameraScreen } from '../screens/app/CameraScreen/CameraScreen';
+import { DarkModeScrren } from '../screens/app/DarkModeScreen/DarkModeScreen';
 import { PostCommentScreen } from '../screens/app/PostCommentScreen/PostCommentScreen';
+import { PublishPostScreen } from '../screens/app/PublishPostScreen/PublishPostScreen';
 import { SearchScreen } from '../screens/app/SearchScreen/SearchScreen';
 import { SettingsScreen } from '../screens/app/SettingsScreen/SettingsScreen';
 import { UserScreen } from '../screens/app/UserScreen/UserScreen';
 
 import { AppBottomTabParamList, AppTabNavigator } from './AppTabNavigator';
-import { PublishPostScreen } from '../screens/app/PublishPostScreen/PublishPostScreen';
-import { CameraScreen } from '../screens/app/CameraScreen/CameraScreen';
-import { DarkModeScrren } from '../screens/app/DarkModeScreen/DarkModeScreen';
 
 export type AppStackParamList = {
   AppTabNavigator: NavigatorScreenParams<AppBottomTabParamList>;

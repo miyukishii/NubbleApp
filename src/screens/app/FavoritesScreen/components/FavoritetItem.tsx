@@ -1,10 +1,10 @@
-import { Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { Image } from 'react-native';
 
-import { Text } from '../../../../components/UI/Text/Text';
 import { BoxProps } from '../../../../components/UI/Box/Box';
-import { PostReaction } from '../../../../domain/PostReaction/postReactionTypes';
 import { PressableBox } from '../../../../components/UI/Box/TouchbleOpacityBox';
+import { Text } from '../../../../components/UI/Text/Text';
+import { PostReaction } from '../../../../domain/PostReaction/postReactionTypes';
 
 export function FavoriteItem({ item, imageSize }: {item: PostReaction, imageSize: number}): React.JSX.Element {
   const navigation = useNavigation();

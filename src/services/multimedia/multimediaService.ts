@@ -1,6 +1,7 @@
-import { Platform } from "react-native";
-import { ImageForUpload } from "./multimediaType";
 import ImageResizer from '@bam.tech/react-native-image-resizer';
+import { Platform } from "react-native";
+
+import { ImageForUpload } from "./multimediaType";
 
 const DEFAULT_PHOTO_WIDTH = 1280;
 const DEFAULT_PHOTO_HEIGHT = 960;

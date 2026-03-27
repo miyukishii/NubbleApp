@@ -1,10 +1,12 @@
 import { useRef, useState } from 'react';
 import { FlatList, ListRenderItemInfo } from 'react-native';
-import { OnBoardingScreenProps } from '../../../routes/navigationType';
-import { PageTemplate } from './components/PageTemplate';
-import { onBoardingPages, PageItem } from './components/onboardingData';
+
 import { Box } from '../../../components/UI/Box/Box';
+import { OnBoardingScreenProps } from '../../../routes/navigationType';
 import { useSettingsService } from '../../../services/settings/useSettings';
+
+import { onBoardingPages, PageItem } from './components/onboardingData';
+import { PageTemplate } from './components/PageTemplate';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function OnboardingScreen({ route }: OnBoardingScreenProps<'OnboardingScreen'>) {

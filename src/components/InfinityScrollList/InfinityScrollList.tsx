@@ -1,9 +1,10 @@
 import { useRef } from 'react';
+import { useScrollToTop } from '@react-navigation/native';
 import { FlatList, FlatListProps, RefreshControl } from 'react-native';
 
-import { useScrollToTop } from '@react-navigation/native';
 
 import { IUsePaginationList, usePaginationList } from '../../hooks/usePaginationList';
+
 import { EmptyList, EmptyListProps } from './components/EmptyList';
 
 type ItemIConstraints = {

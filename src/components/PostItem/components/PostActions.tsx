@@ -1,29 +1,23 @@
-import React, { useState } from 'react';
-
-import { Post } from 'src/domain/Post/postTypes';
-import { ThemeColors } from 'src/theme/theme';
+import { useNavigation } from '@react-navigation/native';
 
 import { Icon, IconProps } from '../../../components/Icon/Icon';
 import { Box } from '../../../components/UI/Box/Box';
 import { TouchbleOpacityBox } from '../../../components/UI/Box/TouchbleOpacityBox';
 import { Text } from '../../../components/UI/Text/Text';
-import { useNavigation } from '@react-navigation/native';
+import { Post } from '../../../domain/Post/postTypes';
+import { useReactToPost } from '../../../domain/PostReaction/useCases/useReactToPost';
+import { ThemeColors } from '../../../theme/theme';
+import { QueryKeys } from '../../../types/infraTypes';
 
-export function PostActions({ reactionCount, commentCount, favoriteCount, id, hideCommentActions = false }: Pick<Post, 'reactionCount'| 'commentCount' | 'favoriteCount' | 'id'> & { hideCommentActions?: boolean }): React.JSX.Element {
-  const [isLiked, setIsLiked] = useState(false);
-  const [isSaved, setIsSaved] = useState(false);
-
+export function PostActions({ post, hideCommentActions = false }: { post: Post, hideCommentActions?: boolean }): React.JSX.Element {
   const navigation = useNavigation();
 
-  function likePost(): void {
-    setIsLiked(!isLiked);
-  }
-  function save(): void {
-    setIsSaved(!isSaved);
-  }
+  const likeReaction = useReactToPost(post, 'like')
+  const favReaction = useReactToPost(post, 'favorite', [QueryKeys.FavoriteList])
+
   const navigateToPostCommentScreen = (): void => {
     navigation.navigate('PostCommentScreen', {
-      postId: id,
+      postId: post.id,
       showPost: false,
     });
   };
@@ -34,14 +28,14 @@ export function PostActions({ reactionCount, commentCount, favoriteCount, id, hi
       alignItems="center"
     >
       <Item
-        onPress={likePost}
-        isMarked={isLiked}
+        onPress={likeReaction.reactToPost}
+        isMarked={likeReaction.reactionState.hasreated}
         markedColor="favorite"
         iconName={{
           default: 'heart',
           marked: 'heartFill',
         }}
-        text={reactionCount}
+        text={likeReaction.reactionState.reactionCount}
       />
       <Item
         onPress={navigateToPostCommentScreen}
@@ -49,17 +43,17 @@ export function PostActions({ reactionCount, commentCount, favoriteCount, id, hi
           default: 'comment',
         }}
         disabled={hideCommentActions}
-        text={commentCount}
+        text={post.commentCount}
       />
       <Item
-        onPress={save}
-        isMarked={isSaved}
+        onPress={favReaction.reactToPost}
+        isMarked={favReaction.reactionState.hasreated}
         markedColor="saved"
         iconName={{
           default: 'bookMark',
           marked: 'bookMarkFill',
         }}
-        text={favoriteCount}
+        text={favReaction.reactionState.reactionCount}
       />
     </Box>
   );

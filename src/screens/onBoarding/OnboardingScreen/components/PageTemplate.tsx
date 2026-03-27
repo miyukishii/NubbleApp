@@ -1,5 +1,7 @@
 import { Dimensions } from 'react-native';
+
 import { Box } from '../../../../components/UI/Box/Box';
+
 import { BottomMenu } from './BottomMenu';
 import { Content } from './Content';
 import { ImageHeader } from './ImageHeader';

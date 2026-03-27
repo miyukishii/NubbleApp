@@ -1,4 +1,5 @@
 import { userAdapter } from "../Users/userAdapter";
+
 import { PostReaction, PostReactionAPI, PostReactionBase, PostReactionBaseAPI } from "./postReactionTypes";
 
 function toPostReactionBase(postReactionBaseAPI: PostReactionBaseAPI): PostReactionBase {

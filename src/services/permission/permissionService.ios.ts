@@ -1,4 +1,5 @@
 import { request as rnpRequest, check as rnpCheck, PermissionStatus as RnpPermissionStatus, PERMISSIONS as RNP_PERMISSIONS, Permission as RnpPermission } from "react-native-permissions";
+
 import { PermissionService, PermissionStatus, PermissionType } from "./permissionType";
 
 const mapType: Record<PermissionType, RnpPermission> = {

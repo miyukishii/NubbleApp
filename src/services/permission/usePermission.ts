@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { PermissionStatus, PermissionType } from "./permissionType";
+
 import { permissionService } from "./permissionService";
+import { PermissionStatus, PermissionType } from "./permissionType";
 
 export function usePermission(permissionType: PermissionType) {
   const [loading, setLoading] = useState(true);

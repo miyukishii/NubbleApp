@@ -1,6 +1,6 @@
+import { createTheme } from '@shopify/restyle';
 import { ViewStyle } from 'react-native';
 
-import { createTheme } from '@shopify/restyle';
 import { colors } from './colors';
 
 export const theme = createTheme({

@@ -1,7 +1,8 @@
 import { useEffect } from "react";
+
 import { useAuthCredentials } from "../services/authCredentials/useAuthCredentials";
-import { useOnboarding } from "../services/settings/useSettings";
 import { settingsService } from "../services/settings/settingsService";
+import { useOnboarding } from "../services/settings/useSettings";
 
 export type Stacks = 'Loading' | 'Auth' | 'App' | 'Onboarding';
 
