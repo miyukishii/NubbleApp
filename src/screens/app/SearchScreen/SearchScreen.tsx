@@ -18,9 +18,7 @@ export function SearchScreen({}: AppScreenProps<'SearchScreen'>) {
 
   const debouncedSearch = useDebounce(searchString);
   const searchHistoryService = useSearchHistoryService();
-  const {
-    dataList,
-  } = useUserSearch(debouncedSearch);
+  const { dataList } = useUserSearch(debouncedSearch);
 
   const renderItem = ({ item }: ListRenderItemInfo<User>): React.JSX.Element => {
     const user = {
@@ -47,19 +45,15 @@ export function SearchScreen({}: AppScreenProps<'SearchScreen'>) {
     <Screen
       canGoBack
       showGoBack={false}
-      HeaderComponent={<SearchField searchString={searchString} setSearchString={setSearchString} />}
-    >
-      {
-        searchString.length === 0 ? (
-          <SearchHistory />
-        ) : (
-          <FlatList
-            data={dataList}
-            renderItem={renderItem}
-            keyExtractor={item => item.username}
-          />
-        )
+      HeaderComponent={
+        <SearchField searchString={searchString} setSearchString={setSearchString} />
       }
+    >
+      {searchString.length === 0 ? (
+        <SearchHistory />
+      ) : (
+        <FlatList data={dataList} renderItem={renderItem} keyExtractor={item => item.username} />
+      )}
     </Screen>
   );
 }

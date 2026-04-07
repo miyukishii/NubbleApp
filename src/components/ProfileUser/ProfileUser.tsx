@@ -2,14 +2,13 @@ import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { GestureResponderEvent } from 'react-native';
 
-
 import { User } from '../../domain/Users/userTypes';
 import { ProfileAvatar, ProfileAvatarProps } from '../ProfileAvatar/ProfileAvatar';
 import { Box } from '../UI/Box/Box';
 import { PressableBox, PressableBoxProps } from '../UI/Box/TouchbleOpacityBox';
 import { Text } from '../UI/Text/Text';
 
-type ProfileUserProps = Pick<User, 'username'| 'profileUrl'| 'id'>;
+type ProfileUserProps = Pick<User, 'username' | 'profileUrl' | 'id'>;
 
 export function ProfileUser({
   user,
@@ -18,9 +17,9 @@ export function ProfileUser({
   onPress,
   ...pressableBoxProps
 }: {
-  user: ProfileUserProps,
-  avatarProps?: Omit<Partial<ProfileAvatarProps>, 'imageUrl'>,
-  rightComponent?: React.ReactNode
+  user: ProfileUserProps;
+  avatarProps?: Omit<Partial<ProfileAvatarProps>, 'imageUrl'>;
+  rightComponent?: React.ReactNode;
 } & PressableBoxProps): React.JSX.Element {
   const navigation = useNavigation();
 
@@ -41,6 +40,7 @@ export function ProfileUser({
 
   return (
     <PressableBox
+      testID="user-profile"
       onPress={handleOnPress}
       flexDirection="row"
       alignItems="center"
@@ -50,10 +50,7 @@ export function ProfileUser({
     >
       <Box flexDirection="row" alignItems="center">
         <ProfileAvatar {...avatarProps} imageUrl={user.profileUrl} userId={Number(user.id)} />
-        <Text
-          ml="s12"
-          semibold
-        >
+        <Text ml="s12" semibold>
           {user.username}
         </Text>
       </Box>
