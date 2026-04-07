@@ -1,5 +1,11 @@
 import { parseISO, differenceInSeconds } from 'date-fns';
 
+/**
+ * Formats an ISO date string to a relative time format (e.g., "5 min", "2 h", "3 d")
+ *
+ * @param dateISO - Date in ISO 8601 format (e.g., "2026-03-27T10:30:00Z" or "2026-03-27T10:30:00-03:00")
+ *
+ */
 const formatRelative = (dateISO: string): string => {
   const date = parseISO(dateISO);
   const now = Date.now();
@@ -38,6 +44,6 @@ const formatRelative = (dateISO: string): string => {
   return `${diffInYears} a`;
 };
 
-export {
+export const dateUtils = {
   formatRelative,
 };

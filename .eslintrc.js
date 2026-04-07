@@ -9,7 +9,7 @@ module.exports = {
     'plugin:react/jsx-runtime',
     'plugin:import/typescript',
     'prettier',
-    'plugin:@tanstack/query/recommended'
+    'plugin:@tanstack/query/recommended',
   ],
   plugins: ['@typescript-eslint', 'import', 'react', '@tanstack/query'],
   parser: '@typescript-eslint/parser',
@@ -39,7 +39,6 @@ module.exports = {
     indent: ['warn', 2, {
       SwitchCase: 1,
     }],
-
     '@typescript-eslint/no-unused-vars': ['warn'],
     '@typescript-eslint/no-var-requires': 'off',
     'space-before-function-paren': ['warn', {
@@ -59,7 +58,6 @@ module.exports = {
         tsx: 'never',
       },
     ],
-
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     '@typescript-eslint/no-namespace': 'off',
@@ -77,7 +75,6 @@ module.exports = {
       when: 'never',
       children: true
     }],
-
     'space-before-function-paren': ['warn', {
       anonymous: 'never',
       named: 'never',
@@ -155,6 +152,12 @@ module.exports = {
     distinctGroup: false
   }],
   },
+  overrides: [
+    {
+      files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+      extends: ['plugin:testing-library/react'],
+    },
+  ],
   env: {
     browser: true,
     node: true,
@@ -169,5 +172,4 @@ module.exports = {
     'metro.config.js',
     'index.js',
   ],
-
 };

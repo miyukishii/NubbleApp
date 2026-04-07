@@ -3,7 +3,7 @@ import { Details, PageAPI, PageParams } from '../../api/apiTypes';
 
 import { PostCommentAPI } from './postCommentTypes';
 
-const PATH = 'user/post_comment';
+export const POST_COMMENT_PATH = 'user/post_comment';
 export interface IGetListParams {
   pageParams: PageParams,
   post_id: number;
@@ -11,7 +11,7 @@ export interface IGetListParams {
 
 async function getList({ pageParams, post_id }: IGetListParams): Promise<PageAPI<PostCommentAPI>> {
   const response = await api.get<PageAPI<PostCommentAPI>>(
-    PATH,
+    POST_COMMENT_PATH,
     { params: {
       post_id,
       ...pageParams,
@@ -27,7 +27,7 @@ export interface ICreateParams {
 
 async function create(data: ICreateParams): Promise<PostCommentAPI> {
   const response = await api.post<PostCommentAPI>(
-    PATH,
+    POST_COMMENT_PATH,
     data
   );
   return response.data;
@@ -35,7 +35,7 @@ async function create(data: ICreateParams): Promise<PostCommentAPI> {
 
 async function remove(commentId: number): Promise<Details> {
   const response = await api.delete<Details>(
-    `${PATH}/${commentId}`,
+    `${POST_COMMENT_PATH}/${commentId}`,
   );
   return response.data;
 }

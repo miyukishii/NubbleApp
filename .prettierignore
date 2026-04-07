@@ -1,0 +1,15 @@
+# .prettierignore
+node_modules
+build
+dist
+coverage
+android
+ios
+Pods
+*.log
+*.lock
+package-lock.json
+yarn.lock
+.git
+.eslintcache
+.vscode

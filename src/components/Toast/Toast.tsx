@@ -36,14 +36,14 @@ export function Toast(): React.JSX.Element | null {
         onEndAnimation(hideToast);
       }, toast.duration || DEFAULT_DURATION);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [toast, hideToast]);
 
   if (!toast) {
     return null;
   }
   return (
-    <Animated.View {...$boxStyled} style={{ opacity: fadeAnimation }}>
+    <Animated.View testID="toast-message" {...$boxStyled} style={{ opacity: fadeAnimation }}>
       <ToastUI toast={toast} />
     </Animated.View>
   );

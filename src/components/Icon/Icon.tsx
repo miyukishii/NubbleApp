@@ -1,7 +1,6 @@
 import { useTheme } from '@shopify/restyle';
 import { Pressable } from 'react-native';
 
-
 import { ArrowLeftIcon } from '../../assets/icons/ArrowLeftIcon';
 import { ArrowRightIcon } from '../../assets/icons/ArrowRighttIcon';
 import { BellIcon } from '../../assets/icons/BellIcon';
@@ -38,7 +37,7 @@ export interface IconBaseProps {
   fillColor?: string;
 }
 
-export interface IconProps{
+export interface IconProps {
   name: IconsNames;
   size?: number;
   color?: ThemeColors;
@@ -46,19 +45,28 @@ export interface IconProps{
   onPress?: () => void;
 }
 
-export function Icon({ name, size = 20, color = 'backgroundConstrast', fillColor = 'background', onPress }: IconProps) {
+export function Icon({
+  name,
+  size = 20,
+  color = 'backgroundConstrast',
+  fillColor = 'background',
+  onPress,
+}: IconProps) {
   const { colors } = useTheme<Theme>();
   const SVGIcon = iconRegistry[name];
 
   const iconProps: React.ComponentProps<typeof SVGIcon> = {
-    size, color: colors[color],
-    fillColor: colors[fillColor]
-  }
+    size,
+    color: colors[color],
+    fillColor: colors[fillColor],
+  };
 
   if (onPress) {
-    return (<Pressable hitSlop={10} onPress={onPress}>
-      <SVGIcon {...iconProps} />
-    </Pressable>);
+    return (
+      <Pressable testID={name} hitSlop={10} onPress={onPress}>
+        <SVGIcon {...iconProps} />
+      </Pressable>
+    );
   }
   return <SVGIcon {...iconProps} />;
 }

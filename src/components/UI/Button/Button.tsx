@@ -4,7 +4,6 @@ import { Text } from '../Text/Text';
 
 import { buttonPresets } from './ButtonPresets';
 
-
 export type ButtonVariants = 'primary' | 'outline' | 'ghost';
 
 interface ButtonProps extends TouchbleOpacityBoxProps {
@@ -30,20 +29,17 @@ export function Button({
       alignItems="center"
       justifyContent="center"
       borderRadius="r16"
+      testID="button-component"
       {...touchbleOpacityBoxProps}
       {...buttonPreset.container}
     >
-      {loading ?
+      {loading ? (
         <ActivityIndicator color={buttonPreset.content} />
-        : (
-          <Text
-            preset="paragraphMedium"
-            bold
-            color={buttonPreset.content}
-          >
-            {title}
-          </Text>
-        )}
+      ) : (
+        <Text preset="paragraphMedium" bold color={buttonPreset.content}>
+          {title}
+        </Text>
+      )}
     </TouchbleOpacityBox>
   );
 }

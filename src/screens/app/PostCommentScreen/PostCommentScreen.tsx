@@ -25,9 +25,7 @@ export function PostCommentScreen({ route }: AppScreenProps<'PostCommentScreen'>
     refresh,
     hasNextPage,
   } = usePostCommentList(postId);
-  const {
-    postData
-  } = usePostGetById(postId, showPost)
+  const { postData } = usePostGetById(postId, showPost);
   const { bottom } = useAppSafeArea();
 
   function renderItem({ item }: ListRenderItemInfo<PostComment>): React.JSX.Element {
@@ -40,12 +38,10 @@ export function PostCommentScreen({ route }: AppScreenProps<'PostCommentScreen'>
       noHorizontalPadding
       canGoBack
       showGoBack={false}
-      title={
-        showPost ? "Post" : "Comentários"
-      }
+      title={showPost ? 'Post' : 'Comentários'}
     >
       <FlatList
-        keyExtractor={(item) => item.id.toString()}
+        keyExtractor={item => item.id.toString()}
         data={commentList}
         renderItem={renderItem}
         showsVerticalScrollIndicator={false}
@@ -55,9 +51,7 @@ export function PostCommentScreen({ route }: AppScreenProps<'PostCommentScreen'>
         ListFooterComponent={<CommentBottom hasNextPage={hasNextPage} loadMore={fetchNextPage} />}
         contentContainerStyle={{ paddingBottom: bottom }}
       />
-      <CommentCreate
-        postId={postId}
-      />
+      <CommentCreate postId={postId} />
     </Screen>
   );
 }
