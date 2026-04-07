@@ -7,7 +7,6 @@ import { useUserGetById } from '../../../domain/Users/useCases/useUserGetById';
 import { AppScreenProps } from '../../../routes/navigationType';
 
 export function UserScreen({ route }: AppScreenProps<'UserScreen'>) {
-
   const id = route.params.userId;
   const userId = Number(id);
 
@@ -17,15 +16,13 @@ export function UserScreen({ route }: AppScreenProps<'UserScreen'>) {
     <Screen canGoBack>
       {isLoading && <ActivityIndicator />}
       {error && <Text>Erro ao carregar perfil do usuário</Text>}
-      {
-        userData && (
-          <Box alignItems="center">
-            <ProfileAvatar imageUrl={userData.profileUrl} size={64} borderRadius={24} />
-            <Text bold>{userData.fullName}</Text>
-            <Text>@{userData.username}</Text>
-          </Box>
-        )
-      }
+      {userData && (
+        <Box alignItems="center">
+          <ProfileAvatar imageUrl={userData.profileUrl} size={64} borderRadius={24} />
+          <Text bold>{userData.fullName}</Text>
+          <Text>@{userData.username}</Text>
+        </Box>
+      )}
     </Screen>
   );
 }

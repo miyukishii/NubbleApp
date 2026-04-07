@@ -4,11 +4,11 @@ import { api } from '../../api/apiConfig';
 
 import { UserAPI } from './userTypes';
 
-const PATH = 'users';
+export const USERS_PATH = 'users';
 
 async function getUser(userId: number): Promise<UserAPI> {
   const response = await api.get<UserAPI>(
-    `${PATH}/${userId}`,
+    `${USERS_PATH}/${userId}`,
   );
   return response.data;
 }
@@ -20,7 +20,7 @@ export interface IGetListParams {
 
 async function getList({ pageParams, search }: IGetListParams): Promise<PageAPI<UserAPI>> {
   const response = await api.get<PageAPI<UserAPI>>(
-    PATH,
+    USERS_PATH,
     { params: {
       ...pageParams,
       search,
