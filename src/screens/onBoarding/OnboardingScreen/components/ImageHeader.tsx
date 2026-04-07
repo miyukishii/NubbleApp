@@ -1,7 +1,8 @@
 import { Dimensions, Image } from 'react-native';
 
-import { PageItem } from './onboardingData';
 import { useAppColor } from '../../../../services/settings/useSettings';
+
+import { PageItem } from './onboardingData';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
@@ -14,8 +15,10 @@ export function ImageHeader({ image } : ImageHeaderProps) {
   const source = appColor === 'light' ? image.light : image.dark
 
   return (
-    <Image source={source} style={{
-      width: SCREEN_WIDTH
-    }} />
+    <Image
+      source={source}
+      style={{
+        width: SCREEN_WIDTH, height: '100%'
+      }} />
   );
 }

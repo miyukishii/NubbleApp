@@ -9,4 +9,6 @@ export type SettingsStore = {
   themePreference: ThemePreference;
   setThemePreference: (themePreference: ThemePreference) => void;
   onSystemChange: (color: ColorSchemeName) => void
+  showOnboarding: boolean;
+  finishOnboarding: () => void;
 }

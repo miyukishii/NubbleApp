@@ -1,7 +1,7 @@
-import { Text } from "../../../../components/UI/Text/Text";
+import { Icon } from "../../../../components/Icon/Icon";
 import { BoxProps } from "../../../../components/UI/Box/Box";
 import { PressableBox } from "../../../../components/UI/Box/TouchbleOpacityBox";
-import { Icon } from "../../../../components/Icon/Icon";
+import { Text } from "../../../../components/UI/Text/Text";
 
 export interface MenuItemProps {
   label: string;

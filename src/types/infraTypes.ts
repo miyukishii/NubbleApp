@@ -1,11 +1,13 @@
 export enum QueryKeys {
+  CameraRollList = 'CameraRollList',
+  FavoriteList = 'FavoriteList',
+  IsEmailAvailable= 'IsEmailAvailable',
+  IsUserNameAvailable= 'IsUserNameAvailable',
   UserGetById = 'UserGetById',
   UserGetList = 'UserGetList',
-  PostList = 'PostList',
   PostCommentList = 'PostCommentList',
-  IsUserNameAvailable= 'IsUserNameAvailable',
-  IsEmailAvailable= 'IsEmailAvailable',
-  CameraRollList = 'CameraRollList'
+  PostList = 'PostList',
+  PostGetById = 'PostGetById'
 }
 
 export enum StatusHTTP {

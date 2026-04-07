@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Toast, ToastType } from '../../../services/toast/toastTypes';
 import { $shadowProps } from '../../../theme/theme';
 import { Icon, IconProps } from '../../Icon/Icon';

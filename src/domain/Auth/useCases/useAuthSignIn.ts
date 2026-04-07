@@ -9,7 +9,7 @@ export function useAuthSignIn() {
   const { showToast } = useToast();
   const { saveCredentials } = useAuthCredentials();
 
-  const { mutate, isPending } = useMutation<AuthCredentials, unknown, SignInData>({
+  const { mutate, isPending, isSuccess, isError } = useMutation<AuthCredentials, unknown, SignInData>({
     mutationFn: (signInData) => authService.signIn(signInData),
     onSuccess: (authCredendial) => {
       saveCredentials(authCredendial);
@@ -29,5 +29,7 @@ export function useAuthSignIn() {
   return {
     isLoading: isPending,
     signIn,
+    isSuccess,
+    isError
   };
 }

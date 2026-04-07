@@ -1,12 +1,13 @@
 import React from "react";
+import { Linking, Platform } from "react-native";
+
 import { PermissionType } from "../../services/permission/permissionType";
 import { usePermission } from "../../services/permission/usePermission";
 import { Screen } from "../Screen/Screen";
-import { Text, TextProps } from "../UI/Text/Text";
-import { Button } from "../UI/Button/Button";
-import { Linking, Platform } from "react-native";
 import { ActivityIndicator } from "../UI/ActivityIndicator/ActivityIndicator";
 import { Box } from "../UI/Box/Box";
+import { Button } from "../UI/Button/Button";
+import { Text, TextProps } from "../UI/Text/Text";
 
 interface PermissionManagerProps {
   permissionType: PermissionType;

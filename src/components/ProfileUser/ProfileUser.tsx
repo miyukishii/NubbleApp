@@ -1,7 +1,7 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { GestureResponderEvent } from 'react-native';
 
-import { useNavigation } from '@react-navigation/native';
 
 import { User } from '../../domain/Users/userTypes';
 import { ProfileAvatar, ProfileAvatarProps } from '../ProfileAvatar/ProfileAvatar';

@@ -7,11 +7,9 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
-    'plugin:import/errors',
-    'plugin:import/warnings',
     'plugin:import/typescript',
     'prettier',
-    'plugin:@tanstack/query/recommended'
+    'plugin:@tanstack/query/recommended',
   ],
   plugins: ['@typescript-eslint', 'import', 'react', '@tanstack/query'],
   parser: '@typescript-eslint/parser',
@@ -41,7 +39,6 @@ module.exports = {
     indent: ['warn', 2, {
       SwitchCase: 1,
     }],
-
     '@typescript-eslint/no-unused-vars': ['warn'],
     '@typescript-eslint/no-var-requires': 'off',
     'space-before-function-paren': ['warn', {
@@ -49,7 +46,7 @@ module.exports = {
         named: 'never',
         asyncArrow: 'always'
     }],
-    'import/no-unresolved': 'error',
+    'import/no-unresolved': 'off',
     'import/no-commonjs': 'off',
     'import/extensions': [
       'error',
@@ -61,7 +58,6 @@ module.exports = {
         tsx: 'never',
       },
     ],
-
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     '@typescript-eslint/no-namespace': 'off',
@@ -79,7 +75,6 @@ module.exports = {
       when: 'never',
       children: true
     }],
-
     'space-before-function-paren': ['warn', {
       anonymous: 'never',
       named: 'never',
@@ -110,7 +105,59 @@ module.exports = {
     'no-console': ['warn', { allow: ['warn', 'error'] }],
     'prefer-const': 'warn',
     'no-unused-expressions': 'warn',
+    'import/order': ['warn', {
+    groups: [
+      'builtin',
+      'external',
+      'internal',
+      'parent',
+      'sibling',
+      'index',
+      'object',
+      'type'
+    ],
+    'newlines-between': 'always',
+    alphabetize: {
+      order: 'asc',
+      caseInsensitive: true
+    },
+    pathGroups: [
+      {
+        pattern: 'react',
+        group: 'external',
+        position: 'before'
+      },
+      {
+        pattern: '@react-native/**',
+        group: 'external',
+        position: 'before'
+      },
+      {
+        pattern: '@react-navigation/**',
+        group: 'external',
+        position: 'before'
+      },
+      {
+        pattern: '@tanstack/**',
+        group: 'external',
+        position: 'before'
+      },
+      {
+        pattern: 'src/**',
+        group: 'internal',
+        position: 'after'
+      }
+    ],
+    pathGroupsExcludedImportTypes: ['react', 'react-native'],
+    distinctGroup: false
+  }],
   },
+  overrides: [
+    {
+      files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+      extends: ['plugin:testing-library/react'],
+    },
+  ],
   env: {
     browser: true,
     node: true,

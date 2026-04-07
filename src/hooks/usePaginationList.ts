@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-
 import { useInfiniteQuery } from '@tanstack/react-query';
 
 import { Page } from '../types/pages';
@@ -15,7 +14,7 @@ interface PaginatedListOption {
   staleTime?: number;
 }
 
-interface IUsePaginationList<Data> {
+export interface IUsePaginationList<Data> {
   queryKey: readonly unknown[];
   getList: ({ page, per_page }: {page: number, per_page: number}) => Promise<Page<Data>>
   options?: PaginatedListOption

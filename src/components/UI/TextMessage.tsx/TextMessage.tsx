@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
+import { useTheme } from '@shopify/restyle';
 import { Pressable, TextInput, TextInputProps } from 'react-native';
 
-import { useTheme } from '@shopify/restyle';
 
 import { Theme } from '../../../theme/theme';
 import { ActivityIndicator } from '../ActivityIndicator/ActivityIndicator';

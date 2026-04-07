@@ -30,11 +30,12 @@ function isAllowToDelete(
     postAuthorId,
     commentAuthorId,
   }: {
-    userId: number,
+    userId: number | null,
     postAuthorId: number,
     commentAuthorId: number,
   }
 ): boolean {
+  if (userId === null) {return false;}
   if (userId === postAuthorId) {return true;}
   if (userId === commentAuthorId) {return true;}
   return false;

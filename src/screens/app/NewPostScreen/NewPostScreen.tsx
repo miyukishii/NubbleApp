@@ -1,12 +1,14 @@
-import { useCameraRoll } from '../../../services/cameraRoll/useCameraRoll';
-import { Screen } from '../../../components/Screen/Screen';
-import { AppTabScreenProps } from '../../../routes/navigationType';
-import { FlatList, Image, ListRenderItemInfo, useWindowDimensions } from 'react-native';
-import { Header } from './components/Header';
 import { useRef, useState } from 'react';
-import { PressableBox } from '../../../components/UI/Box/TouchbleOpacityBox';
-import { usePermission } from '../../../services/permission/usePermission';
+import { FlatList, Image, ListRenderItemInfo, useWindowDimensions } from 'react-native';
+
 import { PermissionManager } from '../../../components/PermissionManager/PermissionManager';
+import { Screen } from '../../../components/Screen/Screen';
+import { PressableBox } from '../../../components/UI/Box/TouchbleOpacityBox';
+import { AppTabScreenProps } from '../../../routes/navigationType';
+import { useCameraRoll } from '../../../services/cameraRoll/useCameraRoll';
+import { usePermission } from '../../../services/permission/usePermission';
+
+import { Header } from './components/Header';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function NewPostScreen({ navigation }: AppTabScreenProps<'NewPostScreen'>) {

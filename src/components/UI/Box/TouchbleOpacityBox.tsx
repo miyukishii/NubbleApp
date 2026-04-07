@@ -1,5 +1,3 @@
-import { TouchableOpacity, TouchableOpacityProps, Pressable, PressableProps } from 'react-native';
-
 import {
   createRestyleComponent,
   backgroundColor,
@@ -13,6 +11,8 @@ import {
   spacingShorthand,
   SpacingShorthandProps,
 } from '@shopify/restyle';
+import { TouchableOpacity, TouchableOpacityProps, Pressable, PressableProps } from 'react-native';
+
 
 import { Theme } from '../../../theme/theme';
 

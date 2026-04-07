@@ -10,14 +10,15 @@ import { AuthCredentialsService } from './authCredentialsTypes';
 export const AuthCredentialContext = createContext<AuthCredentialsService>({
   authCredentials: null,
   isLoading: true,
+  userId: null,
   saveCredentials: async () => {},
   removeCredentials: async () => {},
 });
 
 export function AuthCredentialsProvider({
   children,
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
-}: React.PropsWithChildren<{}>) {
+}: // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+React.PropsWithChildren<{}>) {
   const [authCredentials, setAuthCredentials] = useState<AuthCredentials | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -28,7 +29,7 @@ export function AuthCredentialsProvider({
         authService.updateToken(ac.token);
         setAuthCredentials(ac);
       }
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       //TODO
     } finally {
@@ -64,9 +65,18 @@ export function AuthCredentialsProvider({
     setAuthCredentials(null);
   }
 
+  const userId = authCredentials?.user.id || null;
+
   return (
     <AuthCredentialContext.Provider
-      value={{ authCredentials, isLoading, saveCredentials, removeCredentials }}>
+      value={{
+        authCredentials,
+        isLoading,
+        saveCredentials,
+        removeCredentials,
+        userId,
+      }}
+    >
       {children}
     </AuthCredentialContext.Provider>
   );

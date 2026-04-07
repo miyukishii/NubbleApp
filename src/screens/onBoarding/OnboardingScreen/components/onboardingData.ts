@@ -1,4 +1,5 @@
 import { ImageProps } from "react-native";
+
 import { images } from "../../../../assets";
 
 export type PageItem = {
@@ -7,7 +8,7 @@ export type PageItem = {
     dark: ImageProps['source'];
   }
   content: {
-    title: string;
+    title: Array<{ text: string, highlight: boolean}>;
     subtitle: string;
   }
 }
@@ -19,17 +20,24 @@ export const onBoardingPages: PageItem[] = [
       dark: images.onBoardingDark1,
     },
     content: {
-      title: 'Uma rede social de conexões reais',
+      title: [
+        { text: 'Uma rede social de ', highlight: false },
+        { text: 'conexões reais', highlight: true },
+      ],
       subtitle: 'Fique por dentro do que acontece com as pessoas que você mais gosta',
     },
   },
   {
     imageHeader: {
       light: images.onBoardingLight2,
-      dark: images.onBoardingDark3,
+      dark: images.onBoardingDark2,
     },
     content: {
-      title: 'Compartilhe suas histórias com seus amigos próximos',
+      title: [
+        { text: 'Compartilhe suas ', highlight: false },
+        { text: 'histórias ', highlight: true },
+        { text: 'com seus amigos próximos', highlight: false },
+      ],
       subtitle: 'Tenha sua linha do tempo personalizada',
     },
   },
@@ -39,7 +47,10 @@ export const onBoardingPages: PageItem[] = [
       dark: images.onBoardingDark3,
     },
     content: {
-      title: 'Interaja em tempo real com as pessoas',
+      title: [
+        { text: 'Interaja ', highlight: true },
+        { text: 'em tempo real com as pessoas', highlight: false },
+      ],
       subtitle: 'Curta, comente e favorite os conteúdos que você mais gostar',
     },
   },

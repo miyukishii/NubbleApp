@@ -5,8 +5,8 @@ import { useAppSafeArea } from '../../hooks/useAppSafeArea';
 import { useAppTheme } from '../../hooks/useAppTheme';
 import { Box, BoxProps } from '../UI/Box/Box';
 
+import { ScrollViewContainer, ViewContainer } from './components/ScreenContainer';
 import { ScreenHeader } from './components/ScreenHeader';
-import { ScrollViewContainer, ViewContainer } from './components/ScrennContainer';
 export interface ScreenProps extends BoxProps {
   children: React.ReactNode;
   canGoBack?: boolean;

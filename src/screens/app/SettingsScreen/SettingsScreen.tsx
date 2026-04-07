@@ -1,10 +1,12 @@
 import { FlatList, ListRenderItemInfo } from 'react-native';
+
 import { Screen } from '../../../components/Screen/Screen';
 import { Button } from '../../../components/UI/Button/Button';
+import { Separator } from '../../../components/UI/Separator/Separator';
 import { useAuthSignOut } from '../../../domain/Auth/useCases/useAuthSignOut';
 import { AppScreenProps } from '../../../routes/navigationType';
+
 import { MenuItem, MenuItemProps } from './components/MenuItem';
-import { Separator } from '../../../components/UI/Separator/Separator';
 
 
 export function SettingsScreen({ navigation }: AppScreenProps<'SettingsScreen'>) {

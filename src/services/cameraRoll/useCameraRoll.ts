@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
+import { useInfiniteQuery } from '@tanstack/react-query';
 
 import { QueryKeys } from '../../types/infraTypes';
+
 import { cameraRollService } from './cameraRollService';
-import { useInfiniteQuery } from '@tanstack/react-query';
 
 export function useCameraRoll(hasPermission: boolean, onInitialLoad?: (imageUri: string) => void,) {
   const [list, setList] = useState<string[]>([]);

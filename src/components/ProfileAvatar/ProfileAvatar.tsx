@@ -1,7 +1,7 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { Image, Pressable } from 'react-native';
 
-import { useNavigation } from '@react-navigation/native';
 import { images } from '../../assets';
 
 export interface ProfileAvatarProps {
