@@ -1,5 +1,8 @@
+import { StyleSheet } from 'react-native';
+
 import { render, fireEvent, screen } from 'test-utils';
 
+import { theme } from '../../../../theme/theme';
 import { Button } from '../Button';
 
 describe('<Button />', () => {
@@ -11,7 +14,7 @@ describe('<Button />', () => {
     fireEvent.press(titleElement);
     expect(mockedOnPress).toHaveBeenCalled();
   });
-  it('does render activity indicator when it is loading', () => {
+  test('the title should not be pressable if it is loading', () => {
     const mockedOnPress = jest.fn();
 
     render(<Button title="button title" onPress={mockedOnPress} loading />);
@@ -20,5 +23,18 @@ describe('<Button />', () => {
     const buttonByTestId = screen.getByTestId('button-component');
     fireEvent.press(buttonByTestId);
     expect(mockedOnPress).not.toHaveBeenCalled();
+  });
+  it('does render activity indicator when it is loading', () => {
+    render(<Button title="button title" loading />);
+
+    const loadingElement = screen.queryByTestId('activity-indicator');
+    expect(loadingElement).toBeTruthy();
+  });
+  test('the button to be gray if it is disabled', () => {
+    render(<Button title="button title" disabled />);
+
+    const titleElement = screen.getByText('button title', { exact: false });
+    const titleStyle = StyleSheet.flatten(titleElement.props.style);
+    expect(titleStyle.color).toEqual(theme.colors.gray2);
   });
 });
