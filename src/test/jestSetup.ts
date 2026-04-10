@@ -74,12 +74,17 @@ jest.mock('react-native-permissions', () => ({
   },
 }));
 
-jest.mock('react-native-bootsplash', () => ({
-  hide: jest.fn(async () => Promise.resolve()),
-  isVisible: jest.fn(async () => Promise.resolve(false)),
-  getVisibilityStatus: jest.fn(async () => 'hidden'),
-  show: jest.fn(async () => Promise.resolve()),
-}));
+jest.mock("react-native-bootsplash", () => {
+  return {
+    hide: jest.fn().mockResolvedValue(Promise.resolve()),
+    isVisible: jest.fn(),
+    useHideAnimation: jest.fn().mockReturnValue({
+      container: {},
+      logo: { source: 0 },
+      brand: { source: 0 },
+    }),
+  };
+});
 
 jest.mock('react-native-mmkv', () => ({
   createMMKV: () => ({

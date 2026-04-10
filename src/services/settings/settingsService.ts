@@ -35,9 +35,9 @@ function handleStatusBar(appColor: ColorScheme) {
   }
 }
 
-async function hideSplashScreen() {
+function hideSplashScreen() {
   try {
-    const _isVisible = await isVisible()
+    const _isVisible = isVisible()
     if (_isVisible) {
       hide({ fade: true })
     }
